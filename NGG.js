@@ -10,6 +10,14 @@ let musikAn = true;
 
 document.getElementById('bgMusic').volume = 0.5;
 
+const slider = document.getElementById('volume');
+const music = document.getElementById('bgMusic');
+
+slider.addEventListener('input', () => {
+    if (!music) return;
+    music.volume = slider.value;
+});
+
 if (highscore === null) {
     highscore = Infinity;
 } else {
