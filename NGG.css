@@ -61,19 +61,20 @@ h2:hover{
 }
 
 input{
-    height: 35px;
-    width: 180px;
+    height: 40px;
+    width: 200px;
     margin-right: 0;
         animation: start 2s;
 
 }
 
 button{
-    height: 40px;
-    width: 170px;
+    height: 45px;
+    width: 180px;
     font-size: 20px;
     background-color: rgb(169, 58, 58);
     margin-top: 10px;
+    margin-bottom: 10px;
     transition: 0.3s;
         animation: start 2s;
 
@@ -98,8 +99,8 @@ button:hover{
 }
 
 .Raten{
-    height: 40px;
-    width: 170px;
+    height: 45px;
+    width: 180px;
     font-size: 20px;
     background-color: rgb(53, 196, 51);
     transition: 0.3s;
@@ -157,7 +158,9 @@ button:hover{
 }
 
 .stats{
+    text-align: right;
     display: flex;
+    
 }
 
 @keyframes start {

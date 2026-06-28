@@ -12,20 +12,19 @@
       Number Guessing Game
       <button id="sound" onclick="toggleSound();" class="Sound">🔊 Sound: An</button>
       <button id="music" class="Sound" onclick="toggleMusic();">🎵 Musik: Aus</button>
+                <div class="stats">
+        <h3 id="rounds">🎮 Spiele: </h3>
+        <h3 id="winsEasy">🟢 Siege Leicht: 0</h3>
+        <h3 id="winsMedium">🟡 Siege Mittel: 0</h3>
+        <h3 id="winsHard">🔴 Siege Schwer: 0</h3>
+      </div>
     </header>
+
     <div class="container">
-      <div class="h1tries">
-        <h1 id="Headline">Errate die Zahl!</h1>
-      </div>
-      <h2>Highscores:</h2>
-      <div class="difficulty">
-        <h2 class="difficulty" id="highscoreEasy">Leicht: -</h2>
-        <h2 class="difficulty" id="highscoreMedium">Mittel: -</h2>
-        <h2 class="difficulty" id="highscoreHard">Schwer: -</h2>
-      </div>
       <button class="Leicht" onclick="Easy()">Leicht (1-50)</button>
       <button class="Mittel" onclick="Medium()">Mittel (1-100)</button>
       <button class="Schwer" onclick="Hard()">Schwer (1-500)</button>
+      <h1 id="Headline">Errate die Zahl!</h1>
       <form onsubmit="GuessTheNumber(); return false";>
         <input id="Guess" type="number" required placeholder="Bitte Zahl Erraten" />
         <button class="Raten">Raten!</button>
@@ -34,11 +33,11 @@
         Neu Starten
       </button>
       <h2 id="TriesNumber">Versuche: 0</h2>
-      <div class="stats">
-        <h2 id="rounds">🎮 Spiele: </h2>
-        <h2 id="winsEasy">🟢 Siege Leicht: 0</h2>
-        <h2 id="winsMedium">🟡 Siege Mittel: 0</h2>
-        <h2 id="winsHard">🔴 Siege Schwer: 0</h2>
+      <h2>Highscores:</h2>
+      <div class="difficulty">
+        <h2 class="difficulty" id="highscoreEasy">Leicht: -</h2>
+        <h2 class="difficulty" id="highscoreMedium">Mittel: -</h2>
+        <h2 class="difficulty" id="highscoreHard">Schwer: -</h2>
       </div>
     </div>
 
