@@ -32,12 +32,12 @@ function toggleSound() {
 function toggleMusic() {
     musikAn = !musikAn;
 
-    if (!musikAn) {
-        document.getElementById('music').innerHTML = '🎵 Musik: An';
-        document.getElementById('bgMusic').play();
-    } else {
+    if (musikAn) {
         document.getElementById('music').innerHTML = '🎵 Musik: Aus';
         document.getElementById('bgMusic').pause();
+    } else {
+        document.getElementById('music').innerHTML = '🎵 Musik: An';
+        document.getElementById('bgMusic').play();
     }
 }
     
