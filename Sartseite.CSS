@@ -1,0 +1,17 @@
+body{
+    background-color: #5a4db2;
+    color: rgb(200, 195, 195);
+    font-size: 20px;
+}
+
+.cointaner{
+background:
+    linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url(img/icon.png);
+    background-size: cover;
+    border-radius: 5%;
+    
+    height: 400px;
+    width: 400px;
+    
+}

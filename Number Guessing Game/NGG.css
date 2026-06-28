@@ -1,0 +1,176 @@
+body{
+    background-color: #5a4db2;
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+}
+
+header{
+    background-color: #41377f;
+    width: 100%;
+    font-size: 26px;
+    animation: start 1s;
+}
+
+
+.h1tries{
+    display: flex;
+}
+
+.difficulty{
+    display: flex;
+}
+
+h1{
+    display: block;
+    width: 250px;
+
+    background: linear-gradient(45deg, #41377f, #4d4296);
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 35px;
+    margin-right: 10px;
+    padding: 10px;
+    text-shadow: 0 0 15px #34d6ff;
+    transition: 0.5s;
+        animation: start 1s;
+    
+}
+
+h1:hover{
+    transform: scale(1.05) rotate(5deg);
+}
+
+h2{
+    display: block;
+    width: 200px;
+
+    background: linear-gradient(45deg, #41377f, #4d4296);
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 35px;
+    margin-right: 5px;
+    margin-top: 5px;
+    padding: 8px;
+    text-shadow: 0 0 15px #34d6ff;
+    transition: 0.5s;
+        animation: start 1s;
+}
+
+h2:hover{
+    transform: scale(1.05) rotate(5deg);
+}
+
+input{
+    height: 40px;
+    width: 200px;
+    margin-right: 0;
+        animation: start 2s;
+
+}
+
+button{
+    height: 45px;
+    width: 180px;
+    font-size: 20px;
+    background-color: rgb(169, 58, 58);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+        animation: start 2s;
+
+}
+
+button:hover{
+    box-shadow: 0 0 15px rgb(228, 128, 128);
+}
+
+.Sound{
+    height: 35px;
+    width: 160px;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0);
+    margin-top: 10px;
+    transition: 0.3s
+
+}
+
+.Sound:hover{
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.344);
+}
+
+.Raten{
+    height: 45px;
+    width: 180px;
+    font-size: 20px;
+    background-color: rgb(53, 196, 51);
+    transition: 0.3s;
+        animation: start 2s;
+}
+
+.Raten:hover{
+    box-shadow: 0 0 15px rgb(121, 255, 119);
+}
+
+.Leicht{
+    height: 40px;
+    width: 155px;
+    font-size: 20px;
+    background-color: rgb(53, 196, 51);
+    transition: 0.3s;
+        animation: start 2s;
+}
+
+.Leicht:hover{
+    box-shadow: 0 0 15px rgb(121, 255, 119);
+}
+
+.Mittel{
+    height: 40px;
+    width: 155px;
+    font-size: 20px;
+    background-color: #c4a733;
+    transition: 0.3s;
+        animation: start 2s;
+}
+
+.Mittel:hover{
+    box-shadow: 0 0 15px rgb(225, 198, 87);
+}
+
+.Schwer{
+    height: 40px;
+    width: 155px;
+    font-size: 20px;
+    background-color: #a93a3a;
+    margin-top: 10px;
+    transition: 0.3s;
+        animation: start 2s;
+
+}
+
+.Schwer:hover{
+    box-shadow: 0 0 15px rgb(228, 128, 128);
+}
+
+.difficulty{
+    width:150px;
+    font-size: 30px;
+}
+
+.stats{
+    text-align: right;
+    display: flex;
+    
+}
+
+@keyframes start {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

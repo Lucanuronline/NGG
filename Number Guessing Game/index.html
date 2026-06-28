@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="NGG.css" />
+  </head>
+  <body>
+    <audio id="bgMusic" src="sounds/background.mp3" loop></audio>
+    <header>
+      Number Guessing Game
+      <button id="sound" onclick="toggleSound();" class="Sound">🔊 Sound: An</button>
+      <button id="music" class="Sound" onclick="toggleMusic();">🎵 Musik: Aus</button>
+      
+    </header>
+
+    <div class="container">
+        <div class="stats">
+        <h3 id="rounds">🎮 Spiele: </h3>
+        <h3 id="winsEasy">🟢 Siege Leicht: 0</h3>
+        <h3 id="winsMedium">🟡 Siege Mittel: 0</h3>
+        <h3 id="winsHard">🔴 Siege Schwer: 0</h3>
+        </div>
+      <button class="Leicht" onclick="Easy()">Leicht (1-50)</button>
+      <button class="Mittel" onclick="Medium()">Mittel (1-100)</button>
+      <button class="Schwer" onclick="Hard()">Schwer (1-500)</button>
+      <h1 id="Headline">Errate die Zahl!</h1>
+      <form onsubmit="GuessTheNumber(); return false";>
+        <input id="Guess" type="number" required placeholder="Bitte Zahl Erraten" />
+        <button class="Raten">Raten!</button>
+      </form>
+      <button id="btnRefresh" type="button">
+        Neu Starten
+      </button>
+      <h2 id="TriesNumber">Versuche: 0</h2>
+      <h2>Highscores:</h2>
+      <div class="difficulty">
+        <h2 class="difficulty" id="highscoreEasy">Leicht: -</h2>
+        <h2 class="difficulty" id="highscoreMedium">Mittel: -</h2>
+        <h2 class="difficulty" id="highscoreHard">Schwer: -</h2>
+      </div>
+    </div>
+
+    <script src="NGG.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+
+  </body>
+</html>
