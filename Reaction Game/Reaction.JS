@@ -2,6 +2,11 @@ let startZeit;
 let kannKlicken = false;
 let highscore = Number(localStorage.getItem('highscore')) || Infinity;
 
+if (!highscore || highscore < 50) {
+    localStorage.removeItem('highscore');
+    highscore = Infinity;
+}
+
 function startGame() {
     kannKlicken = false;
     document.getElementById('text').innerHTML = 'Warte...';
@@ -37,10 +42,6 @@ document.getElementById('feld').onclick = function () {
     if (reaktion < highscore) {
         highscore = reaktion;
         localStorage.setItem('highscore', highscore);
-        if (highscore < 50) {
-    localStorage.removeItem('highscore');
-    highscore = Infinity;
-}
 
         document.getElementById('highscore').innerHTML =
             '🏆 Highscore: ' + highscore + ' ms';
