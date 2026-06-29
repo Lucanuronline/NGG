@@ -30,18 +30,17 @@ document.getElementById('feld').onclick = function () {
     }
 
     let reaktion = Date.now() - startZeit;
+
     document.getElementById('zeit').innerHTML =
         'Deine Zeit: ' + reaktion + ' ms';
-};
-    if (document.getElementById('feld').style.backgroundColor === 'green') {
-        let reaktion = Date.now() - startZeit;
-        document.getElementById('zeit').innerHTML =
-            'Deine Zeit: ' + reaktion + ' ms';
-            if (reaktion < highscore) {
-    highscore = reaktion;
-    localStorage.setItem('highscore', highscore);
 
-    document.getElementById('highscore').innerHTML =
-        '🏆 Highscore: ' + highscore + ' ms';
-}
+    if (reaktion < highscore) {
+        highscore = reaktion;
+        localStorage.setItem('highscore', highscore);
+
+        document.getElementById('highscore').innerHTML =
+            '🏆 Highscore: ' + highscore + ' ms';
     }
+
+    kannKlicken = false;
+};
