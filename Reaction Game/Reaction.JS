@@ -30,7 +30,7 @@ document.getElementById('feld').onclick = function () {
 
     if (!kannKlicken) {
         document.getElementById('zeit').innerHTML =
-            '❌ Zu früh geklickt!';
+            '❌ Zu früh/spät geklickt!';
         return;
     }
 
@@ -44,7 +44,7 @@ document.getElementById('feld').onclick = function () {
         localStorage.setItem('highscore', highscore);
 
         document.getElementById('highscore').innerHTML =
-            '🏆 Highscore: ' + highscore + ' ms';
+    '🏆 Highscore: ' + (highscore === Infinity ? '-' : highscore + ' ms');
     }
 
     kannKlicken = false;
