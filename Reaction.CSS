@@ -1,0 +1,68 @@
+body{
+    background: url(img/back.jpg);
+    background-position: center;
+    background-size: cover;
+    color: rgb(200, 195, 195);
+    font-size: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+h1{
+    display: block;
+    width: 300px;
+
+    background: linear-gradient(45deg, #2e6a36, #36713c);
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 40px;
+    text-shadow: 0 0 15px rgb(123, 198, 100);
+    margin: 20px auto;
+    transition: 0.5s;
+    
+    
+}
+
+h1:hover{
+    transform: scale(1.05) rotate(5deg);
+}
+
+h2{
+    display: block;
+    width: 350px;
+
+    background: linear-gradient(45deg, #2e6a36, #36713c);
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 35px;
+    text-shadow: 0 0 15px rgb(123, 198, 100);
+    margin: 20px auto;
+    transition: 0.5s;
+}
+
+h2:hover{
+    transform: scale(1.05) rotate(5deg);
+}
+
+#feld {
+    width: 400px;
+    height: 300px;
+    background-color: red;
+    margin: 20px auto;
+    cursor: pointer;
+    
+}
+
+button{
+    height: 45px;
+    width: 180px;
+    font-size: 20px;
+    background-color: rgb(69, 169, 58);
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+button:hover{
+    box-shadow: 0 0 15px rgb(73, 216, 57);
+}
