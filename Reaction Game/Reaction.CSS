@@ -2,7 +2,6 @@ body{
     background: url(img/back.jpg);
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
     color: rgb(200, 195, 195);
     font-size: 20px;
     align-items: center;
