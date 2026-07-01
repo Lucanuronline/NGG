@@ -20,6 +20,8 @@ function startGame() {
     setTimeout(function () {
         kannKlicken = true;
         document.getElementById('feld').style.backgroundColor = 'green';
+        feld.style.boxShadow = "0 0 25px lime";
+        feld.style.animation = "none";
         document.getElementById('text').innerHTML = 'Klick!';
         startZeit = Date.now();
     }, zufall);
