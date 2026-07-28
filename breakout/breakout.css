@@ -1,0 +1,96 @@
+body{
+    background: #5d4eb8;
+
+}
+
+h1{
+    display: block;
+    width: 250px;
+
+
+    background: linear-gradient(45deg, #41377f, #4d4296);
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 35px;
+    margin: 0 0 20px 0;
+    margin-bottom: 60px;
+    padding: 10px;
+    text-shadow: 0 0 15px #34d6ff;
+    
+}
+
+button{
+    height: 45px;
+    width: 180px;
+    font-size: 20px;
+    background-color: #41377f;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+
+}
+
+button:hover{
+    box-shadow: 0 0 15px #4d4296;
+}
+
+.block{
+    background-color: azure;
+    position: absolute;
+    height: 25px;
+    width: 18%;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.infos{
+    display: flex;
+    flex-direction: column;
+}
+
+.spielfeld{
+    background-color: black;
+    height: 500px;
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 8 / 5;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.schlager{
+    background-color: azure;
+    height: 15px;
+    width: 120px;
+    position: absolute;
+    
+}
+
+.ball{
+    background-color: azure;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+@media (max-width: 800px){
+
+    .container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    h1{
+        font-size: 24px;
+        margin: 10px auto;
+    }
+
+}

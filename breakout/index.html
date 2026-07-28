@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakout</title>
+    <link rel="stylesheet" href="breakout.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="spielfeld" id="spielfeld">
+            <div class="ball" id="ball"></div>
+            <div class="schlager" id="schlager"></div>
+        </div>
+
+            <div class="infos">
+                <h1 id="level">Level: 1</h1>
+                <h1 id="h1"></h1>
+                <h1 id="score">Treffer: 0</h1>
+                <h1 id="highscore">Highscore: </h1>
+                <button id="btnRefresh" onclick="handleClick()">Neu start</button>
+            </div>
+    </div>
+
+
+    <script src="breakout.js"></script>
+</body>
+
+</html>
