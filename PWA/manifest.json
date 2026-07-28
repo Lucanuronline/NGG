@@ -6,7 +6,7 @@
   "display": "fullScreen",
   "orientation": "portrait",
   "scope": "/",
-  "start_url": "/index.html",
+  "start_url": "/NeonArcade",
   "icons": [
     {
       "sizes": "72x72",
