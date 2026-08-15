@@ -1,7 +1,5 @@
 body{
-    background: url(img/back.jpg);
-    background-position: center;
-    background-size: cover;
+    background: #5d4eb8;
     color: rgb(200, 195, 195);
     font-size: 20px;
     align-items: center;
@@ -13,11 +11,11 @@ h1{
     display: block;
     width: 300px;
 
-    background: linear-gradient(45deg, #2e6a36, #36713c);
+    background: linear-gradient(45deg, #41377f, #4d4296);
     border-radius: 10px;
     font-weight: 600;
     font-size: 40px;
-    text-shadow: 0 0 15px #7bc664;
+    text-shadow: 0 0 15px #34d6ff;
     margin: 20px auto;
     transition: 0.5s;
     
@@ -32,11 +30,11 @@ h2{
     display: block;
     width: 350px;
 
-    background: linear-gradient(45deg, #2e6a36, #36713c);
+    background: linear-gradient(45deg, #41377f, #4d4296);
     border-radius: 10px;
     font-weight: 600;
     font-size: 35px;
-    text-shadow: 0 0 15px rgb(123, 198, 100);
+    text-shadow: 0 0 15px #34d6ff;
     margin: 20px auto;
     transition: 0.5s;
 }
