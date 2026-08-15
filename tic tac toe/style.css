@@ -1,0 +1,76 @@
+body {
+    background: #5d4eb8;
+    align-items: center;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    
+}
+
+h1{
+    display: block;
+    width: 250px;
+
+
+    background: linear-gradient(45deg, #41377f, #4d4296);
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 35px;
+    margin: 20px 0 20px 0;
+    margin-bottom: 60px;
+    padding: 10px;
+    text-shadow: 0 0 15px #34d6ff;
+    
+}
+
+.modus-auswahl {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+button {
+    height: 100px;
+    width: 300px;
+    font-size: 30px;
+    font-weight: 600;
+    color: #eafcff;
+    background: linear-gradient(45deg, #41377f, #4d4296);
+    border: 2px solid #34d6ff;
+    border-radius: 12px;
+    text-shadow: 0 0 10px #34d6ff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    box-shadow: 0 0 20px #34d6ff;
+    transform: scale(1.05);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    width: 95%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.zelle {
+    aspect-ratio: 1;
+    background-color: #41377f;
+    border: 2px solid #2e2b88;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.zelle:hover {
+    background-color: #4d4296;
+}

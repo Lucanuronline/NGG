@@ -201,6 +201,24 @@ background:
     box-shadow: 0 0 25px rgba(0,0,0,0.3);
 }
 
+.ttt{
+background:
+    linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+    url(img/tictactoe_icon.png);
+    background-size: cover;
+    border-radius: 5%;
+    
+    height: 400px;
+    width: 400px;
+
+    transition: 0.3s;
+    
+}
+
+.ttt:hover{
+    transform: scale(1.05) translateY(-8px);
+    box-shadow: 0 0 25px rgba(0,0,0,0.3);
+}
 
 
 @keyframes start {
