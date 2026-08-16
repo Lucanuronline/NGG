@@ -1,5 +1,4 @@
-let schlaegerX = 340;
-schlager.style.left = schlaegerX + "px";
+let schlaegerX;
 
 let blocks = [];
 
@@ -8,8 +7,8 @@ let highscore = localStorage.getItem('highscore');
 
 let level = 1;
 const farben = ["red", "orange", "yellow", "lime", "cyan", "blue", "purple"];
-let ballX = 390;
-let ballY = 300;
+let ballX;
+let ballY;
 let ballSpeedX = 3;
 let ballSpeedY = -3;
 
@@ -22,6 +21,16 @@ let levelUpSFX = new Audio('sounds/level-up.mp3')
 const refreshBtn = document.getElementById("btnRefresh");
 const ball = document.getElementById("ball");
 const spielfeld = document.getElementById("spielfeld");
+const schlager = document.getElementById("schlager");
+
+schlaegerX = spielfeld.clientWidth / 2 - schlager.offsetWidth / 2;
+ballX = spielfeld.clientWidth / 2;
+ballY = spielfeld.clientHeight / 2;
+
+schlager.style.left = schlaegerX + "px";
+schlager.style.bottom = "15px";
+ball.style.left = ballX + "px";
+ball.style.bottom = "40px";
 
 function handleClick() {
   window.location.reload();
@@ -45,29 +54,19 @@ document.getElementById('highscore').innerHTML =
 createBlocks(4);
 
 function createBlocks(reihen){
+    const reihenHoehe = spielfeld.clientHeight * 0.06;
+
     for (let reihe = 0; reihe < reihen; reihe++){
-
-    for(let spalte = 0; spalte < 5; spalte++){
-
-        let block = document.createElement("div");
-        block.className = "block";
-
-        if (reihe === 0) {
-    block.style.backgroundColor = "red";
-}
-
-block.style.backgroundColor = farben[reihe % farben.length];
-
-        block.style.left = (0 + spalte * 20) + "%";
-        block.style.top = (reihe * 35) + "px";
-
-
-        spielfeld.appendChild(block);
-        blocks.push(block);
-
+        for(let spalte = 0; spalte < 5; spalte++){
+            let block = document.createElement("div");
+            block.className = "block";
+            block.style.backgroundColor = farben[reihe % farben.length];
+            block.style.left = (0 + spalte * 20) + "%";
+            block.style.top = (reihe * reihenHoehe) + "px";
+            spielfeld.appendChild(block);
+            blocks.push(block);
+        }
     }
-
-}
 }
 
 
