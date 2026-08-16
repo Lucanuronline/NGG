@@ -1,53 +1,62 @@
 body{
-    background: #5d4eb8;
-
+    background: linear-gradient(#5d4eb8, #261e54);
+    color: #eafcff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 
 h1{
     display: block;
     width: 250px;
-
-
+    max-width: 100%;
     background: linear-gradient(45deg, #41377f, #4d4296);
     border-radius: 10px;
     font-weight: 600;
-    font-size: 35px;
-    margin: 0 0 20px 0;
-    margin-bottom: 60px;
+    font-size: 30px;
+    margin: 0 0 15px 0;
     padding: 10px;
     text-shadow: 0 0 15px #34d6ff;
-    
+    box-sizing: border-box;
+    text-align: center;
 }
 
 h2{
     display: block;
     width: 200px;
-
-
+    max-width: 100%;
     background: linear-gradient(45deg, #41377f, #4d4296);
     border-radius: 10px;
     font-weight: 600;
-    font-size: 35px;
-    margin: 0 0 20px 0;
-    margin-bottom: 60px;
+    font-size: 26px;
+    margin: 0 0 15px 0;
     padding: 10px;
     text-shadow: 0 0 15px #34d6ff;
-    
+    box-sizing: border-box;
+    text-align: center;
 }
 
 button{
-    height: 45px;
-    width: 180px;
+    height: 50px;
+    width: 200px;
+    max-width: 100%;
     font-size: 20px;
-    background-color: #41377f;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    font-weight: 600;
+    color: #eafcff;
+    background: linear-gradient(45deg, #41377f, #4d4296);
+    border: 2px solid #34d6ff;
+    border-radius: 12px;
+    text-shadow: 0 0 10px #34d6ff;
+    cursor: pointer;
     transition: 0.3s;
-
 }
 
 button:hover{
-    box-shadow: 0 0 15px #4d4296;
+    box-shadow: 0 0 20px #34d6ff;
+    transform: scale(1.05);
 }
 
 .container{
@@ -55,27 +64,38 @@ button:hover{
     justify-content: center;
     align-items: flex-start;
     gap: 30px;
+    width: 100%;
+    max-width: 900px;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .infos{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    background: rgba(36, 28, 82, 0.5);
+    border: 1px solid rgba(52, 214, 255, 0.3);
+    border-radius: 16px;
+    padding: 20px;
 }
 
 .spielfeld{
-background:
-    linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.5)),
-    url(img/background.png);
+    background:
+        linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.5)),
+        url(img/background.png);
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     overflow: hidden;
 
-
-    height: 700px;
     width: 100%;
     max-width: 500px;
     aspect-ratio: 3 / 4;
+
+    border: 2px solid #34d6ff;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(52, 214, 255, 0.4);
 
     touch-action: none;
 }
@@ -83,23 +103,21 @@ background:
 .vogel{
     background-image: url(img/vogel.png);
     background-size: contain;
-
-
     height: 60px;
     width: 60px;
-
-
     position: absolute;
     left: 60px;
     top: 250px;
-
+    filter: drop-shadow(0 0 8px rgba(255, 224, 102, 0.6));
 }
 
 .roehre-oben, .roehre-unten {
     position: absolute;
     width: 60px;
-    background-color: #34d6ff;
+    background: linear-gradient(90deg, #1c9fc9, #34d6ff, #1c9fc9);
     border: 2px solid #eafcff;
+    border-radius: 4px;
+    box-shadow: 0 0 12px rgba(52, 214, 255, 0.6);
 }
 
 @media (max-width: 800px){
@@ -109,16 +127,21 @@ background:
         align-items: center;
     }
 
+    .infos {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .infos h1, .infos h2 {
+        width: auto;
+        font-size: 18px;
+        margin: 0;
+    }
 
     h1{
         font-size: 24px;
-        margin: 10px auto;
-        width: 200px;
-    }
-
-    h2{
-        font-size: 24px;
-        margin: 10px auto;
     }
 
 }
