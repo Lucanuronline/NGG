@@ -1,6 +1,20 @@
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 const refreshBtn = document.getElementById("btnRefresh");
+
+let feldAnzahl = 20;
+let feldGroesse = 20;
+
+function resizeCanvas() {
+    let groesse = Math.min(window.innerWidth - 40, 400);
+    canvas.width = groesse;
+    canvas.height = groesse;
+    feldGroesse = canvas.width / feldAnzahl;
+}
+
+resizeCanvas();
+
+
 let direction = "right";
 let snake = [
     { x: 10, y: 10 }
@@ -58,9 +72,35 @@ function right() {
     }
 }
 
-if ('ontouchstart' in window) {
-    document.getElementById("controls").style.display = "block";
-}
+let touchStartX = 0;
+let touchStartY = 0;
+
+canvas.addEventListener("touchstart", function(event) {
+    touchStartX = event.touches[0].clientX;
+    touchStartY = event.touches[0].clientY;
+});
+
+canvas.addEventListener("touchend", function(event) {
+    let touchEndX = event.changedTouches[0].clientX;
+    let touchEndY = event.changedTouches[0].clientY;
+
+    let deltaX = touchEndX - touchStartX;
+    let deltaY = touchEndY - touchStartY;
+
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        if (deltaX > 30) {
+            right();
+        } else if (deltaX < -30) {
+            left();
+        }
+    } else {
+        if (deltaY > 30) {
+            down();
+        } else if (deltaY < -30) {
+            up();
+        }
+    }
+});
 
 function moveSnake() {
 
@@ -85,11 +125,10 @@ function moveSnake() {
         head.y++;
     }
 
-    if (head.x === food.x && head.y === food.y) {
-        snake.unshift(head);
-        food.x = Math.floor(Math.random() * 18) + 1;
-        food.y = Math.floor(Math.random() * 18) + 1;
-
+if (head.x === food.x && head.y === food.y) {
+    snake.unshift(head);
+    food.x = Math.floor(Math.random() * (feldAnzahl - 1)) + 1;
+    food.y = Math.floor(Math.random() * (feldAnzahl - 1)) + 1;
 }
 
     for (let i = 1; i < snake.length; i++) {
@@ -106,9 +145,9 @@ function moveSnake() {
 
 if (
     head.x < 0 ||
-    head.x >= 20 ||
+    head.x >= feldAnzahl ||
     head.y < 0 ||
-    head.y >= 20
+    head.y >= feldAnzahl
 ) {
     clearInterval(game);
     document.getElementById("gg").innerHTML = "❌ Game Over!";
@@ -121,29 +160,31 @@ if (
 drawSnake();
 
 function drawSnake() {
-
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     for (let i = 0; i < snake.length; i++) {
-
-        ctx.fillStyle = "lime";
-
-        ctx.fillRect(
-            snake[i].x * 20,
-            snake[i].y * 20,
-            20,
-            20
+        ctx.fillStyle = i === 0 ? "#5ee6a4" : "#34d6ff";
+        ctx.beginPath();
+        ctx.roundRect(
+            snake[i].x * feldGroesse + 1,
+            snake[i].y * feldGroesse + 1,
+            feldGroesse - 2,
+            feldGroesse - 2,
+            4
         );
-
+        ctx.fill();
     }
-    ctx.fillStyle = "red";
-ctx.fillRect(
-    food.x * 20,
-    food.y * 20,
-    20,
-    20
-);
 
+    ctx.fillStyle = "#ff5c5c";
+    ctx.beginPath();
+    ctx.roundRect(
+        food.x * feldGroesse + 1,
+        food.y * feldGroesse + 1,
+        feldGroesse - 2,
+        feldGroesse - 2,
+        6
+    );
+    ctx.fill();
 }
 
 setInterval(function () {

@@ -1,8 +1,11 @@
 let score = 0;
 let miss = 0;
 const refreshBtn = document.getElementById("btnRefresh");
-let x = Math.random() * 700;
-let y = Math.random() * 500;
+const spielfeld = document.getElementById("spielfeld");
+const target = document.getElementById("target");
+
+let x = 0;
+let y = 0;
 let highscore = localStorage.getItem('highscore');
 let time = 30;
 let timer = setInterval(function () {
@@ -14,8 +17,14 @@ function handleClick() {
   window.location.reload();
 }
 
-target.style.left = x + "px";
-target.style.top = y + "px";
+function neuesZiel() {
+    x = Math.random() * (spielfeld.clientWidth - target.offsetWidth);
+    y = Math.random() * (spielfeld.clientHeight - target.offsetHeight);
+    target.style.left = x + "px";
+    target.style.top = y + "px";
+}
+
+neuesZiel();
 
 if (highscore === null) {
     highscore = 0;
@@ -25,7 +34,6 @@ if (!highscore || highscore > 250) {
     localStorage.removeItem('highscore');
     highscore = 0;
 }
-
 
 document.getElementById('highscore').innerHTML =
     'highscore: ' + (localStorage.getItem('highscore') || '-');
@@ -44,27 +52,13 @@ function treffer() {
     document.getElementById('score').innerHTML = ('Treffer: ' + score);
 
     if(score > highscore) {
+        highscore = score;
+        localStorage.setItem("highscore", score);
+        document.getElementById("highscore").innerHTML = "Highscore: " + score;
+    }
 
-
-    highscore = score;
-
-    localStorage.setItem("highscore", score );
-
-    document.getElementById("highscore").innerHTML =
-        "Highscore: " + score;
-
-
-}
-    
-
-    x = Math.random() * 700;
-    y = Math.random() * 500;
-    target.style.left = x + "px";
-    target.style.top = y + "px";
-
-
+    neuesZiel();
 }
 
-
-
+target.addEventListener("click", treffer);
 refreshBtn.addEventListener("click", handleClick);

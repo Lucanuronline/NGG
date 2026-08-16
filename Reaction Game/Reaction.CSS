@@ -44,29 +44,38 @@ h2:hover{
 }
 
 #feld {
-    width: 400px;
-    height: 300px;
-    background-color: rgb(255, 0, 0);
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 4 / 3;
+    background: radial-gradient(circle at 35% 35%, #ffb3b3, #ff5c5c 60%, #a93a3a);
     margin: 20px auto;
     cursor: pointer;
-    box-shadow: 0 0 25px rgb(255, 0, 0);
-    border-radius: 15%;
+    box-shadow: 0 0 25px rgba(255, 92, 92, 0.7);
+    border-radius: 20px;
     animation: pulse 1.2s infinite;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #34d6ff;
 }
 
 button{
-    height: 45px;
-    width: 180px;
-    font-size: 20px;
-    background-color: rgb(69, 169, 58);
-    margin-top: 10px;
-    margin-bottom: 10px;
-
+    height: 50px;
+    width: 200px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #eafcff;
+    background: linear-gradient(45deg, #41377f, #4d4296);
+    border: 2px solid #34d6ff;
+    border-radius: 12px;
+    text-shadow: 0 0 10px #34d6ff;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 button:hover{
-    box-shadow: 0 0 15px rgb(73, 216, 57);
+    box-shadow: 0 0 20px #34d6ff;
+    transform: scale(1.05);
 }
 
 @keyframes pulse {

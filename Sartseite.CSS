@@ -2,233 +2,132 @@ body{
     background: linear-gradient(#5d4eb8, #261e54);
     color: #c8c3c3;
     font-size: 20px;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 80px;
-
     animation: start 2s;
 }
 
-html {
-    scroll-behavior: smooth;
+.hero {
+    text-align: center;
+    padding: 40px 20px 20px;
+    max-width: 600px;
 }
 
-header{
-    margin-bottom: 60px;
-
-   text-align: center;
-   font-size: 25px;
-
-       position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-
-    background-color: #41377f;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    z-index: 1000;
+.hero h1 {
+    width: auto;
+    max-width: 400px;
+    font-size: 42px;
 }
 
-a{
-    color:#c8c3c3;
+.hero-claim {
+    font-size: 20px;
+    color: #9fb4ff;
+    margin: 10px 0 24px;
+}
+
+.hero-btn {
+    display: inline-block;
+    background: linear-gradient(45deg, #41377f, #4d4296);
+    border: 2px solid #34d6ff;
+    border-radius: 12px;
+    padding: 14px 32px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #eafcff;
+    text-shadow: 0 0 10px #34d6ff;
     text-decoration: none;
-    margin-right: 10px;
-    
+    transition: 0.3s;
 }
 
-a:hover{
-    text-decoration: underline;
+.hero-btn:hover {
+    box-shadow: 0 0 20px #34d6ff;
+    transform: scale(1.05);
+    text-decoration: none;
 }
-
-h1{
-    display: block;
-    width: 250px;
-
-
-    background: linear-gradient(45deg, #41377f, #4d4296);
-    border-radius: 10px;
-    font-weight: 600;
-    font-size: 35px;
-    margin: 24px auto;
-    margin-bottom: 60px;
-    padding: 10px;
-    text-shadow: 0 0 15px #34d6ff;
-    
-}
-
-.gamesh1{
-    display: block;
-    width: 150px;
-
-    background: linear-gradient(45deg, #41377f, #4d4296);
-    border-radius: 10px;
-    font-weight: 600;
-    font-size: 40px;
-    margin: 24px auto;
-    padding: 10px;
-    text-shadow: 0 0 15px #34d6ff;
-}
-
-.uberh1{
-    display: block;
-    width: 350px;
-
-    background: linear-gradient(45deg, #41377f, #4d4296);
-    border-radius: 10px;
-    font-weight: 600;
-    font-size: 35px;
-    margin: 24px auto;
-    padding: 10px;
-    text-shadow: 0 0 15px #34d6ff;
-}
-
 
 .games{
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
+    max-width: 1400px;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
-.NGG{
-background:
-    linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-    url(img/icon.png);
+.games > div {
     background-size: cover;
+    background-position: center;
     border-radius: 5%;
-    
-    height: 400px;
-    width: 430px;
-
+    flex: 1 1 320px;
+    max-width: 400px;
+    aspect-ratio: 1;
     transition: 0.3s;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
-.NGG:hover{
+.games > div p {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.games > div a {
+    display: inline-block;
+    margin-top: 10px;
+    background: linear-gradient(45deg, #41377f, #4d4296);
+    border: 2px solid #34d6ff;
+    border-radius: 8px;
+    padding: 8px 16px;
+    color: #eafcff;
+    font-weight: 600;
+    text-shadow: 0 0 8px #34d6ff;
+    text-decoration: none;
+    width: fit-content;
+}
+
+.games > div a:hover {
+    box-shadow: 0 0 15px #34d6ff;
+    text-decoration: none;
+}
+
+.games > div:hover{
     transform: scale(1.05) translateY(-8px);
     box-shadow: 0 0 25px rgba(0,0,0,0.3);
 }
 
-.react{
-background:
-    linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-    url(img/reacticon.png);
-    background-size: cover;
-    border-radius: 5%;
-    
-    height: 400px;
-    width: 400px;
-    
-    transition: 0.3s;
+.NGG{ background-image: linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url(img/icon.png); }
+.react{ background-image: linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url(img/reacticon.png); }
+.snake{ background-image: linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url(img/snake.png); }
+.aim{ background-image: linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url(img/aim.png); }
+.breakout{ background-image: linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url(img/breakout_icon.png); }
+.flappyNeon{ background-image: linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url(img/flappyneon_icon.png); }
+.ttt{ background-image: linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url(img/tictactoe_icon.png); }
+
+.text-karte {
+    background: rgba(36, 28, 82, 0.5);
+    border: 1px solid rgba(52, 214, 255, 0.3);
+    border-radius: 16px;
+    padding: 24px;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
 }
 
-.react:hover{
-    transform: scale(1.05) translateY(-8px);
-    box-shadow: 0 0 25px rgba(0,0,0,0.3);
+.text-karte p {
+    margin: 0 0 14px;
+    line-height: 1.5;
+    text-shadow: none;
 }
 
-.snake{
-background:
-    linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-    url(img/snake.png);
-    background-size: cover;
-    border-radius: 5%;
-    
-    height: 400px;
-    width: 400px;
-    
-    transition: 0.3s;
+.text-karte p:last-child {
+    margin-bottom: 0;
 }
 
-.snake:hover{
-    transform: scale(1.05) translateY(-8px);
-    box-shadow: 0 0 25px rgba(0,0,0,0.3);
-}
-
-.aim{
-background:
-    linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-    url(img/aim.png);
-    background-size: cover;
-    border-radius: 5%;
-    
-    height: 400px;
-    width: 400px;
-
-    transition: 0.3s;
-    
-}
-
-.aim:hover{
-    transform: scale(1.05) translateY(-8px);
-    box-shadow: 0 0 25px rgba(0,0,0,0.3);
-}
-
-.breakout{
-background:
-    linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
-    url(img/breakout_icon.png);
-    background-size: cover;
-    border-radius: 5%;
-    
-    height: 400px;
-    width: 400px;
-
-    transition: 0.3s;
-    
-}
-
-.breakout:hover{
-    transform: scale(1.05) translateY(-8px);
-    box-shadow: 0 0 25px rgba(0,0,0,0.3);
-}
-
-.flappyNeon{
-background:
-    linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
-    url(img/flappyneon_icon.png);
-    background-size: cover;
-    border-radius: 5%;
-    
-    height: 400px;
-    width: 400px;
-
-    transition: 0.3s;
-    
-}
-
-.flappyNeon:hover{
-    transform: scale(1.05) translateY(-8px);
-    box-shadow: 0 0 25px rgba(0,0,0,0.3);
-}
-
-.ttt{
-background:
-    linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
-    url(img/tictactoe_icon.png);
-    background-size: cover;
-    border-radius: 5%;
-    
-    height: 400px;
-    width: 400px;
-
-    transition: 0.3s;
-    
-}
-
-.ttt:hover{
-    transform: scale(1.05) translateY(-8px);
-    box-shadow: 0 0 25px rgba(0,0,0,0.3);
-}
-
-
-@keyframes start {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.kontakt-links a, .kontakt-links {
+    display: block;
 }

@@ -10,21 +10,23 @@ if (!highscore || highscore < 50) {
 function startGame() {
     kannKlicken = false;
     document.getElementById('text').innerHTML = 'Warte...';
-    document.getElementById('feld').style.backgroundColor = 'red';
+    feld.style.background = "radial-gradient(circle at 35% 35%, #ffb3b3, #ff5c5c 60%, #a93a3a)";
+    feld.style.boxShadow = "0 0 25px rgba(255, 92, 92, 0.7)";
+    feld.style.animation = "pulse 1.2s infinite";
     document.getElementById('highscore').innerHTML =
     '🏆 Highscore: ' +
     (highscore === Infinity ? '-' : highscore + ' ms');
 
     let zufall = Math.random() * 3000 + 2000;
 
-    setTimeout(function () {
-        kannKlicken = true;
-        document.getElementById('feld').style.backgroundColor = 'green';
-        feld.style.boxShadow = "0 0 25px lime";
-        feld.style.animation = "none";
-        document.getElementById('text').innerHTML = 'Klick!';
-        startZeit = Date.now();
-    }, zufall);
+setTimeout(function () {
+    kannKlicken = true;
+    feld.style.background = "radial-gradient(circle at 35% 35%, #b3ffd9, #5ee6a4 60%, #2f8f5f)";
+    feld.style.boxShadow = "0 0 25px rgba(94, 230, 164, 0.7)";
+    feld.style.animation = "none";
+    document.getElementById('text').innerHTML = 'Klick!';
+    startZeit = Date.now();
+}, zufall);
     
 }
 
