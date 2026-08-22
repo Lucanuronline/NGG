@@ -1,0 +1,110 @@
+body {
+    background: linear-gradient(#5d4eb8, #261e54);
+    min-height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.spiel-seite {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.zurueck-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #34d6ff;
+    background: rgba(36, 28, 82, 0.6);
+    color: #eafcff;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.zurueck-btn:hover {
+    box-shadow: 0 0 15px #34d6ff;
+}
+
+.spiel-titel {
+    all: unset;
+    display: block;
+    font-size: 34px;
+    font-weight: 800;
+    color: #eafcff;
+    text-shadow: 0 0 20px #34d6ff;
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+
+.spiel-beschreibung {
+    color: #c8c3c3;
+    font-size: 17px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.favorit-btn-detail {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(36, 28, 82, 0.6);
+    color: #eafcff;
+    font-size: 24px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    transition: 0.2s;
+}
+
+.favorit-btn-detail:hover {
+    transform: scale(1.1);
+}
+
+.favorit-btn-detail.aktiv {
+    color: #ffe066;
+    text-shadow: 0 0 10px #ffe066;
+}
+
+.spiel-icon {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 3px solid #34d6ff;
+    box-shadow: 0 0 30px rgba(52, 214, 255, 0.5);
+    margin-bottom: 40px;
+}
+
+.spielen-btn {
+    display: inline-block;
+    background: linear-gradient(45deg, #1c7a1c, #38CC1D);
+    border: 2px solid #5ee6a4;
+    border-radius: 12px;
+    padding: 18px 60px;
+    font-size: 22px;
+    font-weight: 800;
+    color: #eafcff;
+    text-shadow: 0 0 10px #5ee6a4;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.spielen-btn:hover {
+    box-shadow: 0 0 25px #5ee6a4;
+    transform: scale(1.05);
+}
