@@ -1,0 +1,92 @@
+body {
+    background: linear-gradient(#5d4eb8, #261e54);
+    color: #eafcff;
+    min-height: 100vh;
+    margin: 0;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.zurueck-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #34d6ff;
+    background: rgba(36, 28, 82, 0.6);
+    color: #eafcff;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.seiten-titel {
+    font-size: 32px;
+    text-shadow: 0 0 15px #34d6ff;
+    margin-bottom: 10px;
+}
+
+.coins-anzeige {
+    font-size: 20px;
+    color: #ffe066;
+    text-shadow: 0 0 10px #ffe066;
+    margin-bottom: 30px;
+}
+
+.erfolge-liste {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.erfolg-karte {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(36, 28, 82, 0.5);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 14px;
+    padding: 14px 18px;
+    opacity: 0.5;
+    filter: grayscale(0.7);
+}
+
+.erfolg-karte.freigeschaltet {
+    opacity: 1;
+    filter: none;
+    border-color: #ffe066;
+    box-shadow: 0 0 15px rgba(255, 224, 102, 0.3);
+}
+
+.erfolg-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+}
+
+.erfolg-info {
+    flex: 1;
+}
+
+.erfolg-info h3 {
+    margin: 0 0 4px;
+    font-size: 17px;
+}
+
+.erfolg-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #c8c3c3;
+}
+
+.erfolg-coins {
+    font-weight: 700;
+    color: #ffe066;
+    white-space: nowrap;
+}

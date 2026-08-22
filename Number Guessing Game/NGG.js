@@ -171,6 +171,18 @@ if (difficulty === 'hard') {
     localStorage.setItem('winsHard', winsHard);
 }
 
+    if (difficulty === 'hard' && Tries < 5) {
+        schalteErfolgFrei("ngg_schwer_5");
+    }
+
+    localStorage.setItem('gewonnen_' + difficulty, 'true');
+
+    if (localStorage.getItem('gewonnen_easy') &&
+        localStorage.getItem('gewonnen_medium') &&
+        localStorage.getItem('gewonnen_hard')) {
+        schalteErfolgFrei("ngg_alle_schwierigkeiten");
+    }
+
 document.getElementById('winsEasy').innerHTML =
     '🟢 Siege Leicht: ' + winsEasy;
 document.getElementById('winsMedium').innerHTML =

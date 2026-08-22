@@ -135,6 +135,14 @@ if (head.x === food.x && head.y === food.y) {
     snake.unshift(head);
     food.x = Math.floor(Math.random() * (feldAnzahl - 1)) + 1;
     food.y = Math.floor(Math.random() * (feldAnzahl - 1)) + 1;
+
+    if (snake.length >= 20) {
+    schalteErfolgFrei("snake_score_20");
+}
+
+if (snake.length >= 50) {
+    schalteErfolgFrei("snake_score_50");
+}
 }
 
     for (let i = 1; i < snake.length; i++) {

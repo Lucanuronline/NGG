@@ -1,3 +1,4 @@
+let versucheGesamt = Number(localStorage.getItem('reactionVersuche')) || 0;
 let startZeit;
 let kannKlicken = false;
 let highscore = Number(localStorage.getItem('highscore')) || Infinity;
@@ -46,6 +47,13 @@ document.getElementById('feld').onclick = function () {
 
     let reaktion = Date.now() - startZeit;
 
+    versucheGesamt++;
+localStorage.setItem('reactionVersuche', versucheGesamt);
+
+if (versucheGesamt >= 5) {
+    schalteErfolgFrei("react_5_versuche");
+}
+
     document.getElementById('zeit').innerHTML =
         'Deine Zeit: ' + reaktion + ' ms';
 
@@ -55,6 +63,9 @@ document.getElementById('feld').onclick = function () {
 
         document.getElementById('highscore').innerHTML =
     '🏆 Highscore: ' + (highscore === Infinity ? '-' : highscore + ' ms');
+    }
+    if (reaktion < 250) {
+        schalteErfolgFrei("react_unter_250");
     }
 
     kannKlicken = false;

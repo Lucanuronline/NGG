@@ -1,3 +1,4 @@
+let spieleGesamt = Number(localStorage.getItem('tttSpiele')) || 0;
 let start = "X";
 let feld = Array(9).fill(null);
 let aktuellerModus = null;
@@ -69,12 +70,22 @@ function checkGewinner() {
         {
             document.getElementById("gewinnerText").innerHTML = feld[linie[0]] + " hat gewonnen";
             return;
+            if (aktuellerModus === "ki" && feld[linie[0]] === "X") {
+    schalteErfolgFrei("ttt_sieg_ki");
+}
         }
     }
 
     if (!feld.includes(null)) {
         document.getElementById("gewinnerText").innerHTML = "Unentschieden!";
     }
+
+    spieleGesamt++;
+localStorage.setItem('tttSpiele', spieleGesamt);
+
+if (spieleGesamt >= 5) {
+    schalteErfolgFrei("ttt_5_spiele");
+}
 }
 
 function gewinntSpieler(spieler) {

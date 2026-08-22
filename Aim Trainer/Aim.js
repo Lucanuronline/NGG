@@ -63,6 +63,14 @@ function treffer() {
         document.getElementById("highscore").innerHTML = "Highscore: " + score;
     }
 
+    if(score >= 30) {
+        schalteErfolgFrei("aim_score_30");
+    }
+
+    if(score >= 50) {
+        schalteErfolgFrei("aim_score_50");
+    }
+
     neuesZiel();
 }
 

@@ -162,6 +162,12 @@ function checkScore() {
             r.gepunktet = true;
             score++;
             document.getElementById("score").innerHTML = "Punkte: " + score;
+            if(score >= 10){
+                schalteErfolgFrei("flappy_score_10");
+            }
+            if(score >= 25){
+                schalteErfolgFrei("flappy_score_25");
+            }
         }
         if(score > highscore) {
 

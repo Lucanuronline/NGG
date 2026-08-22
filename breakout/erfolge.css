@@ -1,0 +1,26 @@
+.erfolg-benachrichtigung {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(45deg, #41377f, #4d4296);
+    border: 2px solid #ffe066;
+    border-radius: 12px;
+    padding: 14px 20px;
+    color: #eafcff;
+    font-size: 15px;
+    box-shadow: 0 0 20px rgba(255, 224, 102, 0.6);
+    z-index: 9999;
+    animation: erfolg-einblenden 0.4s ease-out;
+    max-width: 280px;
+}
+
+.erfolg-benachrichtigung.ausblenden {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: 0.5s;
+}
+
+@keyframes erfolg-einblenden {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+}

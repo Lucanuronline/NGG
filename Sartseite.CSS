@@ -90,7 +90,7 @@ body{
     margin: 10px 0 24px;
 }
 
-.hero-btn {
+.hero-btn,  .erfolge-btn {
     display: inline-block;
     background: linear-gradient(45deg, #41377f, #4d4296);
     border: 2px solid #34d6ff;
@@ -104,7 +104,7 @@ body{
     transition: 0.3s;
 }
 
-.hero-btn:hover {
+.hero-btn:hover , .erfolge-btn:hover{
     box-shadow: 0 0 20px #34d6ff;
     transform: scale(1.05);
     text-decoration: none;

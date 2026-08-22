@@ -164,6 +164,10 @@ function moveBall() {
         let blockSFX = new Audio('sounds/blockbreak.mp3')
         blockSFX.play();
 
+        if(score >= 20){
+            schalteErfolgFrei("breakout_score_20");
+        }
+
             if(score > highscore) {
 
 
@@ -188,13 +192,18 @@ if(blocks.length === 0) {
     level++;
     document.getElementById("level").innerHTML = "Level: " + level;
 
+    if(level === 3){
+        schalteErfolgFrei("breakout_level_3");
+    }
+    }
+
     createBlocks(level + 3);
 }
 
 
 
 
-}
+
 
 spielfeld.addEventListener("touchmove", function(event) {
 

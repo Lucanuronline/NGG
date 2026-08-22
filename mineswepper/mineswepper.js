@@ -272,6 +272,12 @@ function gameOver(gewonnen) {
     } else {
         document.getElementById("statusText").innerHTML = "❌ Game Over!";
     }
+    if(aktuelleSchwierigkeit === "leicht"){
+        schalteErfolgFrei("mines_leicht_gewonnen");
+    }
+    if(aktuelleSchwierigkeit === "schwer"){
+        schalteErfolgFrei("mines_schwer_gewonnen");
+    }
 }
 
 function checkSieg() {
