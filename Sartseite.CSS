@@ -8,6 +8,70 @@ body{
     animation: start 2s;
 }
 
+.splash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #3a2f7a, #0d0a24);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.6s, visibility 0.6s;
+    overflow: hidden;
+}
+
+.splash.ausgeblendet {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.splash-logo {
+    all: unset;
+    font-size: 48px;
+    font-weight: 800;
+    color: #eafcff;
+    text-shadow: 0 0 20px #34d6ff, 0 0 40px #34d6ff;
+    margin-bottom: 40px;
+    animation: pulse-logo 1.8s ease-in-out infinite;
+    position: relative;
+    z-index: 2;
+}
+
+.splash-balken {
+    width: 220px;
+    height: 10px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(52, 214, 255, 0.4);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+}
+
+.splash-balken-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #34d6ff, #5ee6a4);
+    box-shadow: 0 0 12px #34d6ff;
+    border-radius: 6px;
+    animation: balken-laden 1.2s ease-out forwards;
+}
+
+@keyframes balken-laden {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
+@keyframes pulse-logo {
+    0%, 100% { transform: scale(1); text-shadow: 0 0 20px #34d6ff, 0 0 40px #34d6ff; }
+    50% { transform: scale(1.06); text-shadow: 0 0 30px #34d6ff, 0 0 60px #34d6ff; }
+}
+
 .hero {
     text-align: center;
     padding: 40px 20px 20px;
@@ -46,15 +110,123 @@ body{
     text-decoration: none;
 }
 
-.games{
+.games {
     display: flex;
     justify-content: center;
-    gap: 30px;
     flex-wrap: wrap;
-    max-width: 1400px;
+    gap: 24px;
+    max-width: 1300px;
     padding: 0 20px;
     box-sizing: border-box;
 }
+
+.spielkarte {
+    position: relative;
+    flex: 1 1 260px;
+    max-width: 300px;
+    aspect-ratio: 4 / 5;
+    border-radius: 20px;
+    border: 2px solid rgba(255,255,255,0.15);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 18px;
+    box-sizing: border-box;
+    text-decoration: none;
+    transition: 0.3s;
+    overflow: hidden;
+    opacity: 0;
+    animation: karte-erscheinen 0.6s ease-out forwards;
+}
+
+.games a:nth-child(1) { animation-delay: 1.2s; }
+.games a:nth-child(2) { animation-delay: 1.3s; }
+.games a:nth-child(3) { animation-delay: 1.4s; }
+.games a:nth-child(4) { animation-delay: 1.5s; }
+.games a:nth-child(5) { animation-delay: 1.6s; }
+.games a:nth-child(6) { animation-delay: 1.7s; }
+.games a:nth-child(7) { animation-delay: 1.8s; }
+.games a:nth-child(8) { animation-delay: 1.9s; }
+
+@keyframes karte-erscheinen {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.spielkarte:hover {
+    transform: scale(1.05) translateY(-8px);
+}
+
+.spielkarte h2 {
+    all: unset;
+    position: relative;
+    z-index: 2;
+    font-size: 22px;
+    font-weight: 800;
+    color: #eafcff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    text-align: center;
+}
+
+.spielkarte::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0) 50%);
+    z-index: 1;
+}
+
+.karten-bild {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.ngg { background: linear-gradient(135deg, #ffe066, #c4a733); }
+.ngg .karten-bild { background-image: url(img/icon.webp); }
+.ngg:hover { box-shadow: 0 0 25px #ffe066; }
+
+.react { background: linear-gradient(135deg, #ff5c5c, #a93a3a); }
+.react .karten-bild { background-image: url(img/reacticon.webp); }
+.react:hover { box-shadow: 0 0 25px #ff5c5c; }
+
+.snake { background: linear-gradient(135deg, #5ee6a4, #1c7a1c); }
+.snake .karten-bild { background-image: url(img/snake.webp); }
+.snake:hover { box-shadow: 0 0 25px #5ee6a4; }
+
+.aim { background: linear-gradient(135deg, #ff8fa3, #a93a5c); }
+.aim .karten-bild { background-image: url(img/aim.webp); }
+.aim:hover { box-shadow: 0 0 25px #ff8fa3; }
+
+.breakout { background: linear-gradient(135deg, #ffb347, #a95a1c); }
+.breakout .karten-bild { background-image: url(img/breakout_icon.webp); }
+.breakout:hover { box-shadow: 0 0 25px #ffb347; }
+
+.flappy { background: linear-gradient(135deg, #c77dff, #5a2f9e); }
+.flappy .karten-bild { background-image: url(img/flappyneon_icon.webp); }
+.flappy:hover { box-shadow: 0 0 25px #c77dff; }
+
+.ttt { background: linear-gradient(135deg, #5ce1ff, #1c6f9c); }
+.ttt .karten-bild { background-image: url(img/tictactoe_icon.webp); }
+.ttt:hover { box-shadow: 0 0 25px #5ce1ff; }
+
+.mines { background: linear-gradient(135deg, #9fb4ff, #41377f); }
+.mines .karten-bild { background-image: url(img/minesweeper_icon.webp); }
+.mines:hover { box-shadow: 0 0 25px #9fb4ff; }
 
 .games > div {
     background-size: cover;
@@ -100,15 +272,6 @@ body{
     box-shadow: 0 0 25px rgba(0,0,0,0.3);
 }
 
-.NGG{ background-image: linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url(img/icon.png); }
-.react{ background-image: linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url(img/reacticon.png); }
-.snake{ background-image: linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url(img/snake.png); }
-.aim{ background-image: linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url(img/aim.png); }
-.breakout{ background-image: linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url(img/breakout_icon.png); }
-.flappyNeon{ background-image: linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url(img/flappyneon_icon.png); }
-.ttt{ background-image: linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url(img/tictactoe_icon.png); }
-.mineswepper{ background-image: linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url(img/minesweeper_icon.png); }
-
 .text-karte {
     background: rgba(36, 28, 82, 0.5);
     border: 1px solid rgba(52, 214, 255, 0.3);
@@ -131,4 +294,22 @@ body{
 
 .kontakt-links a, .kontakt-links {
     display: block;
+}
+
+@media (max-width: 700px) {
+    .games {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        padding: 0 12px;
+    }
+
+    .spielkarte {
+        flex: none;
+        max-width: 100%;
+    }
+
+    .spielkarte h2 {
+        font-size: 16px;
+    }
 }
