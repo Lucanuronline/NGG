@@ -16,6 +16,12 @@ let aktuelleSchwierigkeit = "leicht";
 const grid = document.getElementById("grid");
 const refreshBtn = document.getElementById("btnRefresh");
 
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        document.getElementById("splash").classList.add("ausgeblendet");
+    }, 1200);
+});
+
 document.getElementById("btnLeicht").addEventListener("click", function() {
     document.body.style.background = "#38CC1D";
     aktuelleSchwierigkeit = "leicht";

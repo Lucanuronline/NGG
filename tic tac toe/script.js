@@ -16,6 +16,12 @@ const gewinnLinien = [
 
 document.getElementById("grid").style.display = "none";
 
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        document.getElementById("splash").classList.add("ausgeblendet");
+    }, 1200);
+});
+
 function startSpiel(modus) {
     aktuellerModus = modus;
     document.getElementById("grid").style.display = "grid";

@@ -24,6 +24,12 @@ let food = {
     y: 5
 };
 
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        document.getElementById("splash").classList.add("ausgeblendet");
+    }, 1200);
+});
+
 function handleClick() {
   window.location.reload();
 }

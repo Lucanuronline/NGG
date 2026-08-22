@@ -7,6 +7,12 @@ if (!highscore || highscore < 50) {
     highscore = Infinity;
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        document.getElementById("splash").classList.add("ausgeblendet");
+    }, 1200);
+});
+
 function startGame() {
     kannKlicken = false;
     document.getElementById('text').innerHTML = 'Warte...';

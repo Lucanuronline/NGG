@@ -36,6 +36,13 @@ document.getElementById('winsHard').innerHTML =
     '🔴 Siege Schwer: ' + winsHard;
 
 
+    document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        document.getElementById("splash").classList.add("ausgeblendet");
+    }, 1200);
+});
+
+
 function toggleSound() {
     soundAn = !soundAn;
 

@@ -14,6 +14,12 @@ let vogelSpeedY = 0;
 const gravitation = 0.4;
 const sprungKraft = -7;
 
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        document.getElementById("splash").classList.add("ausgeblendet");
+    }, 700);
+});
+
 
 function handleClick() {
   window.location.reload();

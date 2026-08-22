@@ -32,6 +32,12 @@ schlager.style.bottom = "15px";
 ball.style.left = ballX + "px";
 ball.style.bottom = "40px";
 
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        document.getElementById("splash").classList.add("ausgeblendet");
+    }, 1200);
+});
+
 function handleClick() {
   window.location.reload();
 }

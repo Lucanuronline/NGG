@@ -13,6 +13,12 @@ let timer = setInterval(function () {
     document.getElementById('timer').innerHTML = 'Zeit: ' + time;
 }, 1000);
 
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        document.getElementById("splash").classList.add("ausgeblendet");
+    }, 1200);
+});
+
 function handleClick() {
   window.location.reload();
 }
