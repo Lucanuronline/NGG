@@ -43,6 +43,12 @@ document.querySelectorAll(".zelle").forEach(function(zelle) {
         if (feld[index] === null) {
             feld[index] = start;
             zelle.textContent = start;
+
+                let aktiverSkin = ladeAktiverSkin("ttt");
+    if (aktiverSkin !== "standard") {
+        let skin = alleSkins[aktiverSkin];
+        zelle.style.color = start === "X" ? skin.xFarbe : skin.oFarbe;
+    }
             checkGewinner();
             if(start === "X"){
                 start = "O"
@@ -169,6 +175,12 @@ function ziehKI() {
 
     let zelle = document.querySelector('.zelle[data-index="' + index + '"]');
     zelle.textContent = "O";
+
+        let aktiverSkin = ladeAktiverSkin("ttt");
+    if (aktiverSkin !== "standard") {
+        let skin = alleSkins[aktiverSkin];
+        zelle.style.color = start === "X" ? skin.xFarbe : skin.oFarbe;
+    }
 
     checkGewinner();
     start = "X";

@@ -94,6 +94,13 @@ function createRoehre() {
     roehreUnten.style.top = (lueckeTop + luecke) + "px";
     roehreUnten.style.height = (feldHoehe - lueckeTop - luecke) + "px";
 
+    let aktiverSkin = ladeAktiverSkin("flappy");
+    if (aktiverSkin !== "standard") {
+        let skin = alleSkins[aktiverSkin];
+        roehreOben.style.background = "linear-gradient(90deg, " + skin.roehreFarbe + ", #eafcff)";
+        roehreUnten.style.background = "linear-gradient(90deg, " + skin.roehreFarbe + ", #eafcff)";
+    }
+
     spielfeld.appendChild(roehreOben);
     spielfeld.appendChild(roehreUnten);
 

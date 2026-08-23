@@ -23,20 +23,22 @@ const ball = document.getElementById("ball");
 const spielfeld = document.getElementById("spielfeld");
 const schlager = document.getElementById("schlager");
 
+let aktiverSkin = ladeAktiverSkin("breakout");
+
+if (aktiverSkin !== "standard") {
+    let skin = alleSkins[aktiverSkin];
+    ball.style.background = "radial-gradient(circle at 35% 35%, #ffffff, " + skin.ballFarbe + " 70%)";
+    schlager.style.background = "linear-gradient(90deg, " + skin.schlaegerFarbe + ", #eafcff)";
+}
+
 schlaegerX = spielfeld.clientWidth / 2 - schlager.offsetWidth / 2;
 ballX = spielfeld.clientWidth / 2;
 ballY = spielfeld.clientHeight / 2;
 
-schlager.style.left = schlaegerX + "px";
-schlager.style.bottom = "15px";
-ball.style.left = ballX + "px";
-ball.style.bottom = "40px";
 
-document.addEventListener("DOMContentLoaded", function() {
-    setTimeout(function() {
-        document.getElementById("splash").classList.add("ausgeblendet");
-    }, 1200);
-});
+setTimeout(function() {
+    document.getElementById("splash").classList.add("ausgeblendet");
+}, 700);
 
 function handleClick() {
   window.location.reload();
@@ -61,6 +63,7 @@ createBlocks(4);
 
 function createBlocks(reihen){
     const reihenHoehe = spielfeld.clientHeight * 0.06;
+    const blockHoehe = reihenHoehe - 5;
 
     for (let reihe = 0; reihe < reihen; reihe++){
         for(let spalte = 0; spalte < 5; spalte++){
@@ -69,6 +72,7 @@ function createBlocks(reihen){
             block.style.backgroundColor = farben[reihe % farben.length];
             block.style.left = (0 + spalte * 20) + "%";
             block.style.top = (reihe * reihenHoehe) + "px";
+            block.style.height = blockHoehe + "px";
             spielfeld.appendChild(block);
             blocks.push(block);
         }
@@ -195,9 +199,11 @@ if(blocks.length === 0) {
     if(level === 3){
         schalteErfolgFrei("breakout_level_3");
     }
-    }
+    
 
     createBlocks(level + 3);
+}
+
 }
 
 

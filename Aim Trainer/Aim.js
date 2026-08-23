@@ -28,6 +28,13 @@ function neuesZiel() {
     y = Math.random() * (spielfeld.clientHeight - target.offsetHeight);
     target.style.left = x + "px";
     target.style.top = y + "px";
+
+        let aktiverSkin = ladeAktiverSkin("aim");
+    if (aktiverSkin !== "standard") {
+        let skin = alleSkins[aktiverSkin];
+        target.style.background = "radial-gradient(circle at 35% 35%, #ffffff, " + skin.zielFarbe + " 60%, #000)";
+    }
+
 }
 
 neuesZiel();

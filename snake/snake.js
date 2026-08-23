@@ -27,7 +27,7 @@ let food = {
 document.addEventListener("DOMContentLoaded", function() {
     setTimeout(function() {
         document.getElementById("splash").classList.add("ausgeblendet");
-    }, 1200);
+    }, 700);
 });
 
 function handleClick() {
@@ -176,8 +176,14 @@ drawSnake();
 function drawSnake() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+     let aktiverSkin = ladeAktiverSkin("snake");
+    let kopfFarbe = aktiverSkin === "standard" ? "#5ee6a4" : alleSkins[aktiverSkin].kopfFarbe;
+    let koerperFarbe = aktiverSkin === "standard" ? "#34d6ff" : alleSkins[aktiverSkin].koerperFarbe;
+
+
     for (let i = 0; i < snake.length; i++) {
-        ctx.fillStyle = i === 0 ? "#5ee6a4" : "#34d6ff";
+
+        ctx.fillStyle = i === 0 ? kopfFarbe : koerperFarbe;
         ctx.beginPath();
         ctx.roundRect(
             snake[i].x * feldGroesse + 1,

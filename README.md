@@ -50,4 +50,3 @@ Besuche die Website und probiere alle Spiele aus!
 Dieses Projekt wurde von Luca entwickelt und wird kontinuierlich erweitert. Ziel ist es, immer mehr Minispiele hinzuzufügen und dabei neue Programmiertechniken zu lernen.
 
 ⭐ Falls dir das Projekt gefällt, freue ich mich über einen Star auf GitHub!
-

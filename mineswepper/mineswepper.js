@@ -245,6 +245,12 @@ function aktualisiereZelle(r, s) {
     } else {
         element.textContent = "";
     }
+
+        let aktiverSkin = ladeAktiverSkin("mines");
+    if (aktiverSkin !== "standard" && zelle.aufgedeckt) {
+        let skin = alleSkins[aktiverSkin];
+        element.style.boxShadow = "0 0 6px " + skin.akzentFarbe;
+    }
 }
 
 function gameOver(gewonnen) {

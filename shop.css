@@ -1,0 +1,95 @@
+body {
+    background: linear-gradient(#5d4eb8, #261e54);
+    color: #eafcff;
+    min-height: 100vh;
+    margin: 0;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.zurueck-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #34d6ff;
+    background: rgba(36, 28, 82, 0.6);
+    color: #eafcff;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.seiten-titel {
+    font-size: 32px;
+    text-shadow: 0 0 15px #34d6ff;
+    margin-bottom: 10px;
+}
+
+.coins-anzeige {
+    font-size: 20px;
+    color: #ffe066;
+    text-shadow: 0 0 10px #ffe066;
+    margin-bottom: 30px;
+}
+
+.skin-liste {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 900px;
+}
+
+.skin-karte {
+    background: rgba(36, 28, 82, 0.5);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 16px;
+    padding: 18px;
+    width: 220px;
+    text-align: center;
+}
+
+.skin-vorschau {
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.skin-karte h3 {
+    margin: 0 0 4px;
+    font-size: 18px;
+}
+
+.skin-karte p {
+    margin: 0 0 12px;
+    font-size: 13px;
+    color: #c8c3c3;
+}
+
+.skin-btn {
+    width: 100%;
+    height: 42px;
+    border: 2px solid #34d6ff;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #41377f, #4d4296);
+    color: #eafcff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.skin-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.aktiv-btn {
+    border-color: #5ee6a4;
+    background: linear-gradient(45deg, #1c7a1c, #38CC1D);
+}
