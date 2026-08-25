@@ -42,6 +42,12 @@ function checkChallenge(spiel, wert) {
     let challenge = heutigeChallenge();
     if (challenge.spiel !== spiel) return;
 
+    localStorage.setItem("neonarcade_coins", coins);
+
+let gesamtCoins = Number(localStorage.getItem("neonarcade_coins_gesamt")) || 0;
+gesamtCoins += 25;
+localStorage.setItem("neonarcade_coins_gesamt", gesamtCoins);
+
     let erfuellt = false;
     if (spiel === "react") {
         erfuellt = wert <= challenge.zielwert;

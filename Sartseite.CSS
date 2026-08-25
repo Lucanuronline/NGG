@@ -42,6 +42,18 @@ body{
     z-index: 2;
 }
 
+.splash-text {
+    all: unset;
+    font-size: 20px;
+    font-weight: 400;
+    color: #eafcff;
+    text-shadow: 0 0 20px #34d6ff, 0 0 40px #34d6ff;
+    margin-top: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+
 .splash-balken {
     width: 220px;
     height: 10px;
@@ -111,6 +123,26 @@ body{
 .challenge-status.erledigt {
     background: rgba(94, 230, 164, 0.2);
     color: #5ee6a4;
+}
+
+.profil-btn {
+    display: inline-block;
+    background: linear-gradient(45deg, #41377f, #4d4296);
+    border: 2px solid #34d6ff;
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #eafcff;
+    text-shadow: 0 0 8px #34d6ff;
+    text-decoration: none;
+    transition: 0.3s;
+    margin: 0 6px;
+}
+
+.profil-btn:hover {
+    box-shadow: 0 0 15px #34d6ff;
+    transform: scale(1.05);
 }
 
 .hero {
@@ -208,6 +240,7 @@ body{
 .games a:nth-child(6) { animation-delay: 1.7s; }
 .games a:nth-child(7) { animation-delay: 1.8s; }
 .games a:nth-child(8) { animation-delay: 1.9s; }
+.games a:nth-child(9) { animation-delay: 2.0s; }
 
 @keyframes karte-erscheinen {
     from {
@@ -319,6 +352,10 @@ body{
 .mines { background: linear-gradient(135deg, #9fb4ff, #41377f); }
 .mines .karten-bild { background-image: url(img/minesweeper_icon.webp); }
 .mines:hover { box-shadow: 0 0 25px #9fb4ff; }
+
+.hoehertiefer { background: linear-gradient(135deg, #5ee6a4, #ff5c5c); }
+.hoehertiefer .karten-bild { background-image: url(img/hoeher_tiefer_icon.png); }
+.hoehertiefer:hover { box-shadow: 0 0 25px #5ee6a4; }
 
 .games > div {
     background-size: cover;

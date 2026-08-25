@@ -2,6 +2,7 @@ let challenge = heutigeChallenge();
 let erledigt = istChallengeHeuteAbgeschlossen();
 
 
+
 document.addEventListener("DOMContentLoaded", function() {
     setTimeout(function() {
         document.getElementById("splash").classList.add("ausgeblendet");
@@ -14,6 +15,20 @@ document.getElementById("challengeKarte").innerHTML =
     "<p>" + challenge.text + "</p>" +
     (erledigt ? "<span class='challenge-status erledigt'>✅ Geschafft!</span>" : "<span class='challenge-status'>+25 🪙 bei Erfolg</span>");
 
+
+
+function ermittleRang() {
+    let gesamtCoins = Number(localStorage.getItem("neonarcade_coins_gesamt")) || 0;
+    let aktuellerRang = alleRaenge[0];
+
+    for (let i = 0; i < alleRaenge.length; i++) {
+        if (gesamtCoins >= alleRaenge[i].minCoins) {
+            aktuellerRang = alleRaenge[i];
+        }
+    }
+
+    return aktuellerRang;
+}
 
 function ladeFavoriten() {
     let gespeichert = localStorage.getItem("favoriten");
@@ -93,3 +108,25 @@ function sortiereFavoriten() {
 
         aktualisiereSterne();
         sortiereFavoriten();
+
+
+
+
+
+function ermittleRangMitFortschritt() {
+    let gesamtCoins = Number(localStorage.getItem("neonarcade_coins_gesamt")) || 0;
+    let aktuellerIndex = 0;
+
+    for (let i = 0; i < alleRaenge.length; i++) {
+        if (gesamtCoins >= alleRaenge[i].minCoins) {
+            aktuellerIndex = i;
+        }
+    }
+
+    let aktuellerRang = alleRaenge[aktuellerIndex];
+    let naechsterRang = alleRaenge[aktuellerIndex + 1];
+
+    return { aktuellerRang, naechsterRang, gesamtCoins, aktuellerIndex };
+}
+
+

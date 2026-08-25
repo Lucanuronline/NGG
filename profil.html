@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeonArcade – Profil</title>
+    <link rel="stylesheet" href="profil.css">
+</head>
+<body>
+    <button class="zurueck-btn" onclick="window.location.href='index.html'">←</button>
+
+    <h1 class="seiten-titel">👤 Mein Profil</h1>
+
+    <div class="profil-karte" id="rangKarte">
+        <h2 class="rang-titel" id="rangTitel">🎖️ Neuling</h2>
+        <div class="rang-balken">
+            <div class="rang-balken-fill" id="rangBalkenFill"></div>
+        </div>
+        <p class="rang-info" id="rangInfo"></p>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-karte">
+            <div class="stat-zahl" id="statCoins">0</div>
+            <div class="stat-label">🪙 Aktuelle Coins</div>
+        </div>
+        <div class="stat-karte">
+            <div class="stat-zahl" id="statGesamtCoins">0</div>
+            <div class="stat-label">💰 Coins insgesamt verdient</div>
+        </div>
+        <div class="stat-karte">
+            <div class="stat-zahl" id="statErfolge">0 / 0</div>
+            <div class="stat-label">🏆 Erfolge freigeschaltet</div>
+        </div>
+        <div class="stat-karte">
+            <div class="stat-zahl" id="statSkins">0</div>
+            <div class="stat-label">🎨 Skins freigeschaltet</div>
+        </div>
+    </div>
+
+    <div class="profil-karte" id="challengeKarteProfil"></div>
+
+    <script src="erfolge.js"></script>
+    <script src="shop.js"></script>
+    <script src="challenges.js"></script>
+    <script src="profil.js"></script>
+</body>
+</html>

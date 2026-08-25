@@ -1,0 +1,147 @@
+body{
+    background: linear-gradient(#5d4eb8, #261e54);
+    color: #eafcff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+h1{
+    display: block;
+    width: 280px;
+    max-width: 100%;
+    background: linear-gradient(45deg, #41377f, #4d4296);
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 30px;
+    margin: 0 0 15px 0;
+    padding: 10px;
+    text-shadow: 0 0 15px #34d6ff;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+h2{
+    display: block;
+    width: 250px;
+    max-width: 100%;
+    background: linear-gradient(45deg, #41377f, #4d4296);
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 22px;
+    margin: 0 0 15px 0;
+    padding: 10px;
+    text-shadow: 0 0 15px #34d6ff;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+h3{
+    color: #c8c3c3;
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+.spielfeld {
+    margin-bottom: 20px;
+}
+
+.karte-anzeige {
+    display: flex;
+    justify-content: center;
+}
+
+.karte {
+    width: 140px;
+    height: 200px;
+    background: linear-gradient(135deg, #eafcff, #c8c3c3);
+    border: 3px solid #34d6ff;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    font-weight: 800;
+    color: #241c52;
+    box-shadow: 0 0 25px rgba(52, 214, 255, 0.5);
+    transition: 0.3s;
+}
+
+.einsatz-bereich {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#einsatzInput {
+    height: 45px;
+    width: 120px;
+    font-size: 20px;
+    border-radius: 8px;
+    border: 2px solid #34d6ff;
+    background: #241c52;
+    color: #eafcff;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.einsatz-presets {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.einsatz-presets button {
+    height: 36px;
+    width: 65px;
+    font-size: 14px;
+}
+
+button{
+    height: 45px;
+    width: 150px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #eafcff;
+    background: linear-gradient(45deg, #41377f, #4d4296);
+    border: 2px solid #34d6ff;
+    border-radius: 12px;
+    text-shadow: 0 0 8px #34d6ff;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 6px;
+}
+
+button:hover{
+    box-shadow: 0 0 15px #34d6ff;
+    transform: scale(1.05);
+}
+
+.wett-buttons {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 10px;
+}
+
+.hoeher-btn {
+    background: linear-gradient(45deg, #1c7a1c, #38CC1D);
+    border-color: #5ee6a4;
+    text-shadow: 0 0 8px #5ee6a4;
+}
+
+.hoeher-btn:hover {
+    box-shadow: 0 0 15px #5ee6a4;
+}
+
+.tiefer-btn {
+    background: linear-gradient(45deg, #6e2323, #a93a3a);
+    border-color: #ff5c5c;
+    text-shadow: 0 0 8px #ff5c5c;
+}
+
+.tiefer-btn:hover {
+    box-shadow: 0 0 15px #ff5c5c;
+}

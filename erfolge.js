@@ -26,6 +26,9 @@ const alleErfolge = {
     mines_leicht_gewonnen: { titel: "Minenräumer", beschreibung: "Minesweeper auf Leicht gewonnen", coins: 10 },
     mines_schwer_gewonnen: { titel: "Minenexperte", beschreibung: "Minesweeper auf Schwer gewonnen", coins: 30 },
 
+    hoeher_tiefer_5_siege: { titel: "Kartenglück", beschreibung: "5 Runden Höher/Tiefer gewonnen", coins: 15 },
+    hoeher_tiefer_grosser_gewinn: { titel: "Großer Wurf", beschreibung: "Eine Runde Höher/Tiefer mit Einsatz 100+ gewonnen", coins: 30 },
+
         geheim_nacht_eule: {
         titel: "Nachteule",
         beschreibung: "Ein Spiel zwischen 0 und 4 Uhr morgens gespielt",
@@ -60,6 +63,10 @@ function schalteErfolgFrei(erfolgId) {
     let coins = ladeCoins();
     coins += alleErfolge[erfolgId].coins;
     localStorage.setItem("neonarcade_coins", coins);
+
+    let gesamtCoins = Number(localStorage.getItem("neonarcade_coins_gesamt")) || 0;
+    gesamtCoins += alleErfolge[erfolgId].coins;
+    localStorage.setItem("neonarcade_coins_gesamt", gesamtCoins);
 
     zeigeErfolgBenachrichtigung(erfolgId);
 }

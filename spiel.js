@@ -46,7 +46,14 @@ const spiele = {
         beschreibung: "Deck vorsichtig Feld für Feld auf, ohne auf eine Mine zu treffen! Wähle zwischen drei Schwierigkeitsgraden und versuche, deine Bestzeit zu unterbieten.",
         bild: "img/minesweeper_icon.webp",
         link: "mineswepper/index.html"
-    }
+    },
+
+    hoehertiefer: {
+    titel: "Höher Tiefer",
+    beschreibung: "Ziehe eine Karte und wette, ob die nächste höher oder tiefer ist. Setze deine Coins ein und versuche, eine möglichst lange Gewinnserie hinzulegen!",
+    bild: "img/hoeher_tiefer_icon.png",
+    link: "hoeher-tiefer/hoeher-tiefer.html"
+}
 };
 
 const params = new URLSearchParams(window.location.search);
