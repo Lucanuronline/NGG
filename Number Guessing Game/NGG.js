@@ -161,6 +161,10 @@ if (difficulty === 'easy') {
     localStorage.setItem('winsEasy', winsEasy);
 }
 
+    if (difficulty === 'easy' && Tries === 1) {
+        schalteErfolgFrei("ngg_leicht_1");
+    }
+
 if (difficulty === 'medium') {
     winsMedium++;
     localStorage.setItem('winsMedium', winsMedium);

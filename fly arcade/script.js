@@ -17,7 +17,7 @@ const sprungKraft = -7;
 document.addEventListener("DOMContentLoaded", function() {
     setTimeout(function() {
         document.getElementById("splash").classList.add("ausgeblendet");
-    }, 700);
+    }, 500);
 });
 
 
@@ -168,6 +168,7 @@ function checkScore() {
         if (!r.gepunktet && vogelX >= r.x + r.oben.offsetWidth) {
             r.gepunktet = true;
             score++;
+            checkChallenge("flappy", score);
             document.getElementById("score").innerHTML = "Punkte: " + score;
             if(score >= 10){
                 schalteErfolgFrei("flappy_score_10");

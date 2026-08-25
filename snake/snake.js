@@ -5,6 +5,16 @@ const refreshBtn = document.getElementById("btnRefresh");
 let feldAnzahl = 20;
 let feldGroesse = 20;
 
+let score = 0
+let highscore = localStorage.getItem('highscore');
+
+if (highscore === null) {
+    highscore = 0;
+}
+
+document.getElementById('highscore').innerHTML =
+    'highscore: ' + (localStorage.getItem('highscore') || '-');
+
 function resizeCanvas() {
     let groesse = Math.min(window.innerWidth - 40, 400);
     canvas.width = groesse;
@@ -27,7 +37,7 @@ let food = {
 document.addEventListener("DOMContentLoaded", function() {
     setTimeout(function() {
         document.getElementById("splash").classList.add("ausgeblendet");
-    }, 700);
+    }, 600);
 });
 
 function handleClick() {
@@ -37,19 +47,23 @@ function handleClick() {
 document.addEventListener("keydown", function(event) {
 
     if (event.key === "ArrowUp" && direction !== "down") {
-        direction = "up";
+        direction = "up"
+        event.preventDefault();
     }
 
     if (event.key === "ArrowDown" && direction !== "up") {
         direction = "down";
+        event.preventDefault();
     }
 
     if (event.key === "ArrowLeft" && direction !== "right") {
         direction = "left";
+        event.preventDefault();
     }
 
     if (event.key === "ArrowRight" && direction !== "left") {
         direction = "right";
+        event.preventDefault();
     }
 
 });
@@ -132,16 +146,37 @@ function moveSnake() {
     }
 
 if (head.x === food.x && head.y === food.y) {
+    score++;
+    document.getElementById("score").innerHTML = "Punkte: " + score;
     snake.unshift(head);
     food.x = Math.floor(Math.random() * (feldAnzahl - 1)) + 1;
     food.y = Math.floor(Math.random() * (feldAnzahl - 1)) + 1;
 
-    if (snake.length >= 20) {
+    if(score > highscore) {
+
+
+    highscore = score;
+
+    localStorage.setItem("highscore", score );
+
+    document.getElementById("highscore").innerHTML =
+        "Highscore: " + highscore;
+
+
+}
+
+    checkChallenge("snake", score);
+
+    if (score >= 20) {
     schalteErfolgFrei("snake_score_20");
 }
 
-if (snake.length >= 50) {
+if (score >= 50) {
     schalteErfolgFrei("snake_score_50");
+}
+
+if (score >= 70) {
+    schalteErfolgFrei("snake_score_70");
 }
 }
 

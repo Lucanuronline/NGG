@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake</title>
-    <link rel="stylesheet" href="snake.css">
-    <link rel="stylesheet" href="erfolge.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake</title>
+  <link rel="stylesheet" href="snake.css">
+  <link rel="stylesheet" href="../erfolge.css">
 </head>
+
 <body>
   <div class="splash" id="splash">
     <h1 class="splash-logo">🎮 Snake</h1>
     <div class="splash-balken">
-        <div class="splash-balken-fill"></div>
+      <div class="splash-balken-fill"></div>
     </div>
-</div>
+  </div>
 
 
   <h2 id="gg"></h2>
-    <canvas id="game"></canvas>
-          <p><button id="btnRefresh" type="button" onclick="handleclick()">
-        Neu Starten
-      </button></p>
-      
-    <script src="../shop.js"></script>
-    <script src="snake.js"></script>
-    <script src="erfolge.js"></script>
+  <canvas id="game"></canvas>
+  <p><button id="btnRefresh" type="button" onclick="handleclick()">
+      Neu Starten
+    </button></p>
+  <h2 id="score">Punkte:</h2>
+  <h2 id="highscore">
+    Highscore:
+  </h2>
+
+  <script src="../challenges.js"></script>
+  <script src="../shop.js"></script>
+  <script src="snake.js"></script>
+  <script src="../erfolge.js"></script>
 </body>
+
 </html>

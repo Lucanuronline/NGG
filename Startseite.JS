@@ -1,8 +1,18 @@
+let challenge = heutigeChallenge();
+let erledigt = istChallengeHeuteAbgeschlossen();
+
+
 document.addEventListener("DOMContentLoaded", function() {
     setTimeout(function() {
         document.getElementById("splash").classList.add("ausgeblendet");
     }, 1200);
 });
+
+
+document.getElementById("challengeKarte").innerHTML =
+    "<h3>🌟 Tages-Challenge</h3>" +
+    "<p>" + challenge.text + "</p>" +
+    (erledigt ? "<span class='challenge-status erledigt'>✅ Geschafft!</span>" : "<span class='challenge-status'>+25 🪙 bei Erfolg</span>");
 
 
 function ladeFavoriten() {

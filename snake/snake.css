@@ -103,15 +103,19 @@ button{
     height: 55px;
     width: 250px;
     font-size: 27px;
-    background: linear-gradient(45deg, #41377f, #4d4296);
     margin: 20px auto;
+    color: #eafcff;
+    background: linear-gradient(45deg, #41377f, #4d4296);
+    border: 2px solid #34d6ff;
+    border-radius: 12px;
+    text-shadow: 0 0 10px #34d6ff;
+    cursor: pointer;
     transition: 0.3s;
-        animation: start 2s;
-
 }
 
 button:hover{
-    text-shadow: 0 0 15px #34d6ff;
+    box-shadow: 0 0 20px #34d6ff;
+    transform: scale(1.05);
 }
 
 

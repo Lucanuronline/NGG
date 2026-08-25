@@ -164,6 +164,7 @@ function moveBall() {
         ballSpeedY = -ballSpeedY;
 
         score++;
+        checkChallenge("breakout", score);
         document.getElementById('score').innerHTML = ('Treffer: ' + score);
         let blockSFX = new Audio('sounds/blockbreak.mp3')
         blockSFX.play();
@@ -198,6 +199,10 @@ if(blocks.length === 0) {
 
     if(level === 3){
         schalteErfolgFrei("breakout_level_3");
+    }
+
+    if(level === 10){
+        schalteErfolgFrei("breakout_level_10");
     }
     
 

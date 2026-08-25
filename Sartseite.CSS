@@ -72,6 +72,47 @@ body{
     50% { transform: scale(1.06); text-shadow: 0 0 30px #34d6ff, 0 0 60px #34d6ff; }
 }
 
+.challenge-karte {
+    background: rgba(36, 28, 82, 0.5);
+    border: 1px solid rgba(255, 224, 102, 0.4);
+    border-radius: 16px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 224, 102, 0.15);
+}
+
+.challenge-karte h3 {
+    all: unset;
+    display: block;
+    font-size: 20px;
+    color: #ffe066;
+    text-shadow: 0 0 10px #ffe066;
+    margin-bottom: 10px;
+}
+
+.challenge-karte p {
+    margin: 0 0 12px;
+    color: #eafcff;
+    font-size: 15px;
+}
+
+.challenge-status {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 20px;
+    background: rgba(255, 224, 102, 0.15);
+    color: #ffe066;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.challenge-status.erledigt {
+    background: rgba(94, 230, 164, 0.2);
+    color: #5ee6a4;
+}
+
 .hero {
     text-align: center;
     padding: 40px 20px 20px;

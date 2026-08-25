@@ -1,6 +1,6 @@
 const spiele = {
     ngg: {
-        titel: "Number Guessing Game",
+        titel: "NGG (Number Guessing Game)",
         beschreibung: "Errate die zufällig generierte Zahl in möglichst wenigen Versuchen. Wähle zwischen verschiedenen Schwierigkeitsgraden, sammle Highscores und verfolge deine Statistiken.",
         bild: "img/icon.webp",
         link: "Number Guessing Game/index.html"

@@ -64,6 +64,8 @@ function treffer() {
     score++;
     document.getElementById('score').innerHTML = ('Treffer: ' + score);
 
+    checkChallenge("aim", score);
+
     if(score > highscore) {
         highscore = score;
         localStorage.setItem("highscore", score);
