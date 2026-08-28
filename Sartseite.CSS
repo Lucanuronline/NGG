@@ -357,6 +357,10 @@ body{
 .hoehertiefer .karten-bild { background-image: url(img/hoeher_tiefer_icon.png); }
 .hoehertiefer:hover { box-shadow: 0 0 25px #5ee6a4; }
 
+.blackjack { background: linear-gradient(135deg, #ff28d8, #5cb8ff); }
+.blackjack .karten-bild { background-image: url(img/blackjack_icon.png); }
+.blackjack:hover { box-shadow: 0 0 25px #ff28d8; }
+
 .games > div {
     background-size: cover;
     background-position: center;

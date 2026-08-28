@@ -37,7 +37,7 @@ let food = {
 document.addEventListener("DOMContentLoaded", function() {
     setTimeout(function() {
         document.getElementById("splash").classList.add("ausgeblendet");
-    }, 600);
+    }, 500);
 });
 
 function handleClick() {

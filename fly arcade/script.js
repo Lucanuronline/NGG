@@ -17,7 +17,7 @@ const sprungKraft = -7;
 document.addEventListener("DOMContentLoaded", function() {
     setTimeout(function() {
         document.getElementById("splash").classList.add("ausgeblendet");
-    }, 500);
+    }, 300);
 });
 
 

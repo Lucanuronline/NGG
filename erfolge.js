@@ -29,6 +29,9 @@ const alleErfolge = {
     hoeher_tiefer_5_siege: { titel: "Kartenglück", beschreibung: "5 Runden Höher/Tiefer gewonnen", coins: 15 },
     hoeher_tiefer_grosser_gewinn: { titel: "Großer Wurf", beschreibung: "Eine Runde Höher/Tiefer mit Einsatz 100+ gewonnen", coins: 30 },
 
+    blackjack_5_siege: { titel: "Kartenprofi", beschreibung: "5 Runden Blackjack gewonnen", coins: 20 },
+    blackjack_natuerlich: { titel: "Blackjack!", beschreibung: "Mit den ersten zwei Karten direkt 21 erreicht", coins: 30 },
+
         geheim_nacht_eule: {
         titel: "Nachteule",
         beschreibung: "Ein Spiel zwischen 0 und 4 Uhr morgens gespielt",

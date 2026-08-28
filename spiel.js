@@ -53,6 +53,13 @@ const spiele = {
     beschreibung: "Ziehe eine Karte und wette, ob die nächste höher oder tiefer ist. Setze deine Coins ein und versuche, eine möglichst lange Gewinnserie hinzulegen!",
     bild: "img/hoeher_tiefer_icon.png",
     link: "hoeher-tiefer/hoeher-tiefer.html"
+},
+
+    blackjack: {
+    titel: "Blackjack",
+    beschreibung: "Spiele gegen den Dealer und versuche, mit deinen Karten möglichst nah an 21 Punkte zu kommen. Aber Vorsicht: Wer über 21 kommt, verliert die Runde!",
+    bild: "img/blackjack_icon.png",
+    link: "blackjack/blackjack.html"
 }
 };
 

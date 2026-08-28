@@ -11,6 +11,12 @@ const ergebnisText = document.getElementById("ergebnisText");
 const siegeAnzeige = document.getElementById("siegeAnzeige");
 const einsatzInput = document.getElementById("einsatzInput");
 
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        document.getElementById("splash").classList.add("ausgeblendet");
+    }, 500);
+});
+
 function zeigeKarte(wertIndex) {
     let farbe = farben[Math.floor(Math.random() * farben.length)];
     kartenElement.innerHTML = werte[wertIndex] + "<br>" + farbe;
