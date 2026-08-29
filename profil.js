@@ -1,11 +1,11 @@
 const alleRaenge = [
     { name: "Neuling", minCoins: 0 },
     { name: "Gelegenheitsspieler", minCoins: 100 },
-    { name: "Arcade-Fan", minCoins: 250 },
-    { name: "Bronze Arcade-Spieler", minCoins: 500 },
-    { name: "Silber Arcade-Spieler", minCoins: 1000 },
-    { name: "Gold Arcade-Spieler", minCoins: 2000 },
-    { name: "Neon-Legende", minCoins: 4000 }
+    { name: "Arcade-Fan", minCoins: 500 },
+    { name: "Bronze Arcade-Spieler", minCoins: 1000 },
+    { name: "Silber Arcade-Spieler", minCoins: 2000 },
+    { name: "Gold Arcade-Spieler", minCoins: 4000 },
+    { name: "Neon-Legende", minCoins: 10000 }
 ];
 
 function ermittleRangMitFortschritt() {
@@ -58,3 +58,32 @@ document.getElementById("challengeKarteProfil").innerHTML =
     "<h2 class='karten-titel'>🌟 Heutige Challenge</h2>" +
     "<p>" + challenge.text + "</p>" +
     (erledigt ? "<span class='challenge-status erledigt'>✅ Geschafft!</span>" : "<span class='challenge-status'>+25 🪙 bei Erfolg</span>");
+
+    const alleHighscores = [
+    { spiel: "Number Guessing Game (Leicht)", schluessel: "highscoreEasy", einheit: " Versuche" },
+    { spiel: "Number Guessing Game (Mittel)", schluessel: "highscoreMedium", einheit: " Versuche" },
+    { spiel: "Number Guessing Game (Schwer)", schluessel: "highscoreHard", einheit: " Versuche" },
+    { spiel: "Reaction Game", schluessel: "highscore", einheit: " ms" },
+    { spiel: "Snake", schluessel: "highscore", einheit: " Punkte" },
+    { spiel: "Aim Trainer", schluessel: "highscore", einheit: " Treffer" },
+    { spiel: "Breakout", schluessel: "highscore", einheit: " Treffer" },
+    { spiel: "Flappy Neon", schluessel: "highscore", einheit: " Punkte" },
+    { spiel: "Minesweeper (Leicht)", schluessel: "highscore_leicht", einheit: "s" },
+    { spiel: "Minesweeper (Mittel)", schluessel: "highscore_mittel", einheit: "s" },
+    { spiel: "Minesweeper (Schwer)", schluessel: "highscore_schwer", einheit: "s" }
+];
+
+let highscoreListe = document.getElementById("highscoreListe");
+
+for (let i = 0; i < alleHighscores.length; i++) {
+    let eintrag = alleHighscores[i];
+    let wert = localStorage.getItem(eintrag.schluessel);
+
+    let zeile = document.createElement("div");
+    zeile.className = "highscore-zeile";
+    zeile.innerHTML =
+        "<span class='highscore-spiel'>" + eintrag.spiel + "</span>" +
+        "<span class='highscore-wert'>" + (wert ? wert + eintrag.einheit : "–") + "</span>";
+
+    highscoreListe.appendChild(zeile);
+}

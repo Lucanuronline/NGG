@@ -15,20 +15,86 @@ document.getElementById("challengeKarte").innerHTML =
     "<p>" + challenge.text + "</p>" +
     (erledigt ? "<span class='challenge-status erledigt'>✅ Geschafft!</span>" : "<span class='challenge-status'>+25 🪙 bei Erfolg</span>");
 
+const kristallBtn = document.getElementById("kristallBtn");
+let kristallSichtbar = false;
+let kristallVerschwindenTimeout;
 
+function zufälligePosition() {
+    let breite = window.innerWidth;
+    let hoehe = window.innerHeight;
 
-function ermittleRang() {
-    let gesamtCoins = Number(localStorage.getItem("neonarcade_coins_gesamt")) || 0;
-    let aktuellerRang = alleRaenge[0];
+    let x = Math.random() * (breite - 100) + 10;
+    let y = Math.random() * (hoehe - 100) + 10;
 
-    for (let i = 0; i < alleRaenge.length; i++) {
-        if (gesamtCoins >= alleRaenge[i].minCoins) {
-            aktuellerRang = alleRaenge[i];
-        }
-    }
-
-    return aktuellerRang;
+    kristallBtn.style.left = x + "px";
+    kristallBtn.style.top = y + "px";
 }
+
+function zeigeKristall() {
+    zufälligePosition();
+    kristallBtn.classList.add("sichtbar");
+    kristallSichtbar = true;
+
+    kristallVerschwindenTimeout = setTimeout(function() {
+        versteckeKristall();
+    }, 6000);
+}
+
+function versteckeKristall() {
+    kristallBtn.classList.remove("sichtbar");
+    kristallSichtbar = false;
+
+    let naechsteWartezeit = Math.random() * 20000 + 15000;
+    setTimeout(zeigeKristall, naechsteWartezeit);
+}
+
+kristallBtn.addEventListener("click", function(event) {
+    if (!kristallSichtbar) return;
+
+    clearTimeout(kristallVerschwindenTimeout);
+
+    let coins = ladeCoins();
+    coins += 1;
+    localStorage.setItem("neonarcade_coins", coins);
+
+    let gesamtCoins = Number(localStorage.getItem("neonarcade_coins_gesamt")) || 0;
+    gesamtCoins += 1;
+    localStorage.setItem("neonarcade_coins_gesamt", gesamtCoins);
+
+    let klicksGesamt = Number(localStorage.getItem("kristall_klicks")) || 0;
+    klicksGesamt++;
+    localStorage.setItem("kristall_klicks", klicksGesamt);
+
+    zeigePlusEins(event);
+
+    kristallBtn.classList.add("geklickt");
+    setTimeout(function() {
+        kristallBtn.classList.remove("geklickt");
+    }, 100);
+
+    versteckeKristall();
+
+    if (klicksGesamt >= 100) {
+        schalteErfolgFrei("kristall_100_klicks");
+    }
+});
+
+function zeigePlusEins(event) {
+    let plusEins = document.createElement("div");
+    plusEins.className = "kristall-plus";
+    plusEins.innerHTML = "+1";
+    plusEins.style.left = event.clientX + "px";
+    plusEins.style.top = event.clientY + "px";
+    document.body.appendChild(plusEins);
+
+    setTimeout(function() {
+        plusEins.remove();
+    }, 800);
+}
+
+setTimeout(zeigeKristall, 5000);
+
+
 
 function ladeFavoriten() {
     let gespeichert = localStorage.getItem("favoriten");
@@ -113,20 +179,6 @@ function sortiereFavoriten() {
 
 
 
-function ermittleRangMitFortschritt() {
-    let gesamtCoins = Number(localStorage.getItem("neonarcade_coins_gesamt")) || 0;
-    let aktuellerIndex = 0;
 
-    for (let i = 0; i < alleRaenge.length; i++) {
-        if (gesamtCoins >= alleRaenge[i].minCoins) {
-            aktuellerIndex = i;
-        }
-    }
-
-    let aktuellerRang = alleRaenge[aktuellerIndex];
-    let naechsterRang = alleRaenge[aktuellerIndex + 1];
-
-    return { aktuellerRang, naechsterRang, gesamtCoins, aktuellerIndex };
-}
 
 

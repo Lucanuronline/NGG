@@ -26,7 +26,7 @@ const schlager = document.getElementById("schlager");
 let aktiverSkin = ladeAktiverSkin("breakout");
 
 if (aktiverSkin !== "standard") {
-    let skin = alleSkins[aktiverSkin];
+    let skin = findeSkinDaten(aktiverSkin);
     ball.style.background = "radial-gradient(circle at 35% 35%, #ffffff, " + skin.ballFarbe + " 70%)";
     schlager.style.background = "linear-gradient(90deg, " + skin.schlaegerFarbe + ", #eafcff)";
 }

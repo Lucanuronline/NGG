@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeonArcade – Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login-karte">
+        <h1>🎮 NeonArcade</h1>
+
+        <div id="loginBereich">
+            <h2>Anmelden</h2>
+            <input type="text" id="loginBenutzername" placeholder="Benutzername" />
+            <input type="password" id="loginPasswort" placeholder="Passwort" />
+            <button id="btnLogin">Anmelden</button>
+            <p id="loginFehler" class="fehler-text"></p>
+            <p>Noch kein Konto? <a href="#" id="zuRegistrierung">Registrieren</a></p>
+        </div>
+
+        <div id="registrierungBereich" style="display: none;">
+            <h2>Registrieren</h2>
+            <input type="text" id="regBenutzername" placeholder="Benutzername" />
+            <input type="password" id="regPasswort" placeholder="Passwort (min. 6 Zeichen)" />
+            <button id="btnRegistrieren">Konto erstellen</button>
+            <p id="regFehler" class="fehler-text"></p>
+            <p>Schon ein Konto? <a href="#" id="zuLogin">Anmelden</a></p>
+        </div>
+    </div>
+
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="login.js"></script>
+</body>
+</html>

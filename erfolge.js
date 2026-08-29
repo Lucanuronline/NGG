@@ -1,49 +1,53 @@
 const alleErfolge = {
-    ngg_leicht_1: { titel: "Glückspilz", beschreibung: "In NGG die Zahl auf Leicht im ersten Versuchen erraten", coins: 10 },
-    ngg_schwer_5: { titel: "Blitzrater", beschreibung: "In NGG die Zahl auf Schwer in unter 5 Versuchen erraten", coins: 20 },
-    ngg_alle_schwierigkeiten: { titel: "Vielseitig", beschreibung: "NGG Auf allen drei Schwierigkeiten mindestens einmal gewinnen", coins: 15 },
+    ngg_leicht_1: { titel: "Glückspilz", beschreibung: "In NGG die Zahl auf Leicht im ersten Versuchen erraten", coins: 10, kategorie: "ngg" },
+    ngg_schwer_5: { titel: "Blitzrater", beschreibung: "In NGG die Zahl auf Schwer in unter 5 Versuchen erraten", coins: 20, kategorie: "ngg" },
+    ngg_alle_schwierigkeiten: { titel: "Vielseitig", beschreibung: "NGG Auf allen drei Schwierigkeiten mindestens einmal gewinnen", coins: 15, kategorie: "ngg" },
 
-    react_unter_250: { titel: "Blitzreflexe", beschreibung: "IM Reacton Game eine Reaktionszeit unter 250ms haben", coins: 20 },
-    react_5_versuche: { titel: "Warmgespielt", beschreibung: "5 Runden Reaction Game gespielt", coins: 10 },
+    react_unter_250: { titel: "Blitzreflexe", beschreibung: "IM Reacton Game eine Reaktionszeit unter 250ms haben", coins: 20, kategorie: "react" },
+    react_5_versuche: { titel: "Warmgespielt", beschreibung: "5 Runden Reaction Game gespielt", coins: 10, kategorie: "react" },
 
-    snake_score_20: { titel: "Schlangenprofi", beschreibung: "20 Punkte in Snake erreicht", coins: 10 },
-    snake_score_50: { titel: "Riesenschlange", beschreibung: "50 Punkte in Snake erreicht", coins: 30 },
-    snake_score_70: { titel: "Schlangenexperte", beschreibung: "70 Punkte in Snake erreicht", coins: 40 },
+    snake_score_20: { titel: "Schlangenprofi", beschreibung: "20 Punkte in Snake erreicht", coins: 10, kategorie: "snake" },
+    snake_score_50: { titel: "Riesenschlange", beschreibung: "50 Punkte in Snake erreicht", coins: 30, kategorie: "snake" },
+    snake_score_70: { titel: "Schlangenexperte", beschreibung: "70 Punkte in Snake erreicht", coins: 40, kategorie: "snake" },
 
-    aim_score_30: { titel: "Scharfschütze", beschreibung: "30 Treffer im Aim Trainer erzielt", coins: 15 },
-    aim_score_50: { titel: "Adleraugen", beschreibung: "50 Treffer im Aim Trainer erzielt", coins: 30 },
+    aim_score_30: { titel: "Scharfschütze", beschreibung: "30 Treffer im Aim Trainer erzielt", coins: 15, kategorie: "aim" },
+    aim_score_50: { titel: "Adleraugen", beschreibung: "50 Treffer im Aim Trainer erzielt", coins: 30, kategorie: "aim" },
 
-    breakout_level_3: { titel: "Blockbrecher", beschreibung: "Level 3 in Breakout erreicht", coins: 20 },
-    breakout_level_10: { titel: "Blockzerstörer", beschreibung: "Level 10 in Breakout erreicht", coins: 35 },
-    breakout_score_20: { titel: "Punktesammler", beschreibung: "20 Treffer in Breakout erzielt", coins: 10 },
+    breakout_level_3: { titel: "Blockbrecher", beschreibung: "Level 3 in Breakout erreicht", coins: 20, kategorie: "breakout" },
+    breakout_level_10: { titel: "Blockzerstörer", beschreibung: "Level 10 in Breakout erreicht", coins: 35, kategorie: "breakout" },
+    breakout_score_20: { titel: "Punktesammler", beschreibung: "20 Treffer in Breakout erzielt", coins: 10, kategorie: "breakout" },
 
-    flappy_score_10: { titel: "Erfahrener Flieger", beschreibung: "10 Punkte in Flappy Neon erreicht", coins: 20 },
-    flappy_score_25: { titel: "Neon-Ass", beschreibung: "25 Punkte in Flappy Neon erreicht", coins: 35 },
+    flappy_score_10: { titel: "Erfahrener Flieger", beschreibung: "10 Punkte in Flappy Neon erreicht", coins: 20, kategorie: "flappy" },
+    flappy_score_25: { titel: "Neon-Ass", beschreibung: "25 Punkte in Flappy Neon erreicht", coins: 35, kategorie: "flappy" },
 
-    ttt_sieg_ki: { titel: "KI-Bezwinger", beschreibung: "In Tic Tac Toe Einmal gegen die KI gewonnen", coins: 20 },
-    ttt_5_spiele: { titel: "Vielspieler", beschreibung: "5 Runden Tic Tac Toe gespielt", coins: 10 },
+    ttt_sieg_ki: { titel: "KI-Bezwinger", beschreibung: "In Tic Tac Toe Einmal gegen die KI gewonnen", coins: 20, kategorie: "ttt" },
+    ttt_5_spiele: { titel: "Vielspieler", beschreibung: "5 Runden Tic Tac Toe gespielt", coins: 10, kategorie: "ttt" },
 
-    mines_leicht_gewonnen: { titel: "Minenräumer", beschreibung: "Minesweeper auf Leicht gewonnen", coins: 10 },
-    mines_schwer_gewonnen: { titel: "Minenexperte", beschreibung: "Minesweeper auf Schwer gewonnen", coins: 30 },
+    mines_leicht_gewonnen: { titel: "Minenräumer", beschreibung: "Minesweeper auf Leicht gewonnen", coins: 10, kategorie: "mines" },
+    mines_schwer_gewonnen: { titel: "Minenexperte", beschreibung: "Minesweeper auf Schwer gewonnen", coins: 30, kategorie: "mines" },
 
-    hoeher_tiefer_5_siege: { titel: "Kartenglück", beschreibung: "5 Runden Höher/Tiefer gewonnen", coins: 15 },
-    hoeher_tiefer_grosser_gewinn: { titel: "Großer Wurf", beschreibung: "Eine Runde Höher/Tiefer mit Einsatz 100+ gewonnen", coins: 30 },
+    hoeher_tiefer_5_siege: { titel: "Kartenglück", beschreibung: "5 Runden Höher/Tiefer gewonnen", coins: 15, kategorie: "hoehertiefer" },
+    hoeher_tiefer_grosser_gewinn: { titel: "Großer Wurf", beschreibung: "Eine Runde Höher/Tiefer mit Einsatz 100+ gewonnen", coins: 30, kategorie: "hoehertiefer" },
 
-    blackjack_5_siege: { titel: "Kartenprofi", beschreibung: "5 Runden Blackjack gewonnen", coins: 20 },
-    blackjack_natuerlich: { titel: "Blackjack!", beschreibung: "Mit den ersten zwei Karten direkt 21 erreicht", coins: 30 },
+    blackjack_5_siege: { titel: "Kartenprofi", beschreibung: "5 Runden Blackjack gewonnen", coins: 20, kategorie: "blackjack" },
+    blackjack_natuerlich: { titel: "Blackjack!", beschreibung: "Mit den ersten zwei Karten direkt 21 erreicht", coins: 30, kategorie: "blackjack" },
+
+    kristall_100_klicks: { titel: "Kristallschürfer", beschreibung: "Den Neon-Kristall 100-mal angeklickt", coins: 25, kategorie: "kristall" },
 
         geheim_nacht_eule: {
         titel: "Nachteule",
         beschreibung: "Ein Spiel zwischen 0 und 4 Uhr morgens gespielt",
         coins: 45,
-        geheim: true
+        geheim: true,
+        kategorie: "geheim"
     },
 
         geheim_early_bird: {
         titel: "Frühaufsteher",
         beschreibung: "Ein Spiel zwischen 6 und 9 Uhr morgens gespielt",
         coins: 45,
-        geheim: true
+        geheim: true,
+        kategorie: "geheim"
     }
 };
 

@@ -1,0 +1,63 @@
+body {
+    background: linear-gradient(#5d4eb8, #261e54);
+    color: #eafcff;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+.login-karte {
+    background: rgba(36, 28, 82, 0.6);
+    border: 2px solid #34d6ff;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 360px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(52, 214, 255, 0.4);
+}
+
+.login-karte h1 {
+    text-shadow: 0 0 15px #34d6ff;
+    margin-bottom: 20px;
+}
+
+.login-karte input {
+    display: block;
+    width: 100%;
+    height: 45px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 2px solid #34d6ff;
+    background: #241c52;
+    color: #eafcff;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.login-karte button {
+    width: 100%;
+    height: 45px;
+    border-radius: 12px;
+    border: 2px solid #5ee6a4;
+    background: linear-gradient(45deg, #1c7a1c, #38CC1D);
+    color: #eafcff;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+
+.fehler-text {
+    color: #ff5c5c;
+    font-size: 13px;
+    min-height: 18px;
+}
+
+.login-karte a {
+    color: #34d6ff;
+    cursor: pointer;
+}

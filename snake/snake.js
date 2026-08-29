@@ -211,9 +211,9 @@ drawSnake();
 function drawSnake() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-     let aktiverSkin = ladeAktiverSkin("snake");
-    let kopfFarbe = aktiverSkin === "standard" ? "#5ee6a4" : alleSkins[aktiverSkin].kopfFarbe;
-    let koerperFarbe = aktiverSkin === "standard" ? "#34d6ff" : alleSkins[aktiverSkin].koerperFarbe;
+let aktiverSkin = ladeAktiverSkin("snake");
+let kopfFarbe = aktiverSkin === "standard" ? "#5ee6a4" : findeSkinDaten(aktiverSkin).kopfFarbe;
+let koerperFarbe = aktiverSkin === "standard" ? "#34d6ff" : findeSkinDaten(aktiverSkin).koerperFarbe;
 
 
     for (let i = 0; i < snake.length; i++) {

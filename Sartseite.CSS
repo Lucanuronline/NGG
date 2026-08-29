@@ -203,6 +203,61 @@ body{
     transform: scale(1.05);
 }
 
+.kristall-bereich {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.kristall {
+    position: fixed;
+    width: 90px;
+    height: 90px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(img/idle_kristall_icon.png);
+    cursor: pointer;
+    filter: drop-shadow(0 0 15px rgba(52, 214, 255, 0.6));
+    transition: opacity 0.3s, transform 0.15s;
+    z-index: 500;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.kristall.sichtbar {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.kristall:hover {
+    filter: drop-shadow(0 0 25px rgba(52, 214, 255, 0.9));
+    transform: scale(1.05);
+}
+
+.kristall.geklickt {
+    transform: scale(0.9);
+}
+
+.kristall.cooldown {
+    filter: grayscale(0.8) drop-shadow(0 0 5px rgba(52, 214, 255, 0.2));
+    cursor: not-allowed;
+}
+
+.kristall-plus {
+    position: absolute;
+    color: #ffe066;
+    font-weight: 800;
+    font-size: 18px;
+    text-shadow: 0 0 10px #ffe066;
+    pointer-events: none;
+    animation: kristall-plus-schweben 0.8s ease-out forwards;
+}
+
+@keyframes kristall-plus-schweben {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-40px); }
+}
+
 .games {
     display: flex;
     justify-content: center;

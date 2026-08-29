@@ -90,3 +90,35 @@ body {
     color: #ffe066;
     white-space: nowrap;
 }
+
+.kategorie-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 20px;
+    max-width: 700px;
+}
+
+.kategorie-tab {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(52, 214, 255, 0.3);
+    background: rgba(36, 28, 82, 0.4);
+    color: #c8c3c3;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.kategorie-tab:hover {
+    border-color: #34d6ff;
+    color: #eafcff;
+}
+
+.kategorie-tab.aktiv {
+    background: linear-gradient(45deg, #41377f, #4d4296);
+    border-color: #34d6ff;
+    color: #eafcff;
+    box-shadow: 0 0 10px rgba(52, 214, 255, 0.4);
+}

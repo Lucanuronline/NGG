@@ -43,6 +43,31 @@ body {
     box-shadow: 0 0 20px rgba(199, 125, 255, 0.15);
 }
 
+.highscore-liste {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: left;
+}
+
+.highscore-zeile {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.highscore-spiel {
+    color: #c8c3c3;
+}
+
+.highscore-wert {
+    color: #5ce1ff;
+    font-weight: 700;
+}
+
 .rang-titel {
     display: block;
     font-size: 20px;
