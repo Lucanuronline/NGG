@@ -36,17 +36,40 @@ function istChallengeHeuteAbgeschlossen() {
     return heutigerSeed() === letzterAbschluss;
 }
 
+function gestrigerSeed() {
+    let gestern = new Date();
+    gestern.setDate(gestern.getDate() - 1);
+    return gestern.getFullYear() * 10000 + (gestern.getMonth() + 1) * 100 + gestern.getDate();
+}
+
+function aktualisiereStreak() {
+    let heute = heutigerSeed();
+    let letzterAbschlussTag = Number(localStorage.getItem("challenge_letzter_tag")) || 0;
+    let streak = Number(localStorage.getItem("challenge_streak")) || 0;
+
+    if (letzterAbschlussTag === gestrigerSeed()) {
+        streak++;
+    } else {
+        streak = 1;
+    }
+
+    localStorage.setItem("challenge_streak", streak);
+    localStorage.setItem("challenge_letzter_tag", heute);
+
+    return streak;
+}
+
+function ermittleMultiplikator(streak) {
+    if (streak >= 7) return 2;
+    if (streak >= 3) return 1.5;
+    return 1;
+}
+
 function checkChallenge(spiel, wert) {
     if (istChallengeHeuteAbgeschlossen()) return;
 
     let challenge = heutigeChallenge();
     if (challenge.spiel !== spiel) return;
-
-    localStorage.setItem("neonarcade_coins", coins);
-
-let gesamtCoins = Number(localStorage.getItem("neonarcade_coins_gesamt")) || 0;
-gesamtCoins += 25;
-localStorage.setItem("neonarcade_coins_gesamt", gesamtCoins);
 
     let erfuellt = false;
     if (spiel === "react") {
@@ -58,18 +81,35 @@ localStorage.setItem("neonarcade_coins_gesamt", gesamtCoins);
     if (erfuellt) {
         localStorage.setItem("challenge_abgeschlossen_tag", heutigerSeed());
 
+        let streak = aktualisiereStreak();
+        let multiplikator = ermittleMultiplikator(streak);
+        let bonusCoins = Math.round(25 * multiplikator);
+
         let coins = ladeCoins();
-        coins += 25;
+        coins += bonusCoins;
         localStorage.setItem("neonarcade_coins", coins);
 
-        zeigeErfolgBenachrichtigung_challenge();
+        let gesamtCoins = Number(localStorage.getItem("neonarcade_coins_gesamt")) || 0;
+        gesamtCoins += bonusCoins;
+        localStorage.setItem("neonarcade_coins_gesamt", gesamtCoins);
+
+        zeigeErfolgBenachrichtigung_challenge(bonusCoins, streak, multiplikator);
     }
 }
 
-function zeigeErfolgBenachrichtigung_challenge() {
+function zeigeErfolgBenachrichtigung_challenge(bonusCoins, streak, multiplikator) {
     let benachrichtigung = document.createElement("div");
     benachrichtigung.className = "erfolg-benachrichtigung";
-    benachrichtigung.innerHTML = "🌟 <strong>Tages-Challenge geschafft!</strong><br>+25 🪙";
+
+    let streakText = multiplikator > 1
+        ? "🔥 " + streak + " Tage Streak (x" + multiplikator + ")<br>"
+        : "";
+
+    benachrichtigung.innerHTML =
+        "🌟 <strong>Tages-Challenge geschafft!</strong><br>" +
+        streakText +
+        "+" + bonusCoins + " 🪙";
+
     document.body.appendChild(benachrichtigung);
 
     setTimeout(function() {
@@ -77,3 +117,5 @@ function zeigeErfolgBenachrichtigung_challenge() {
         setTimeout(function() { benachrichtigung.remove(); }, 500);
     }, 3000);
 }
+
+

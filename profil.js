@@ -22,6 +22,7 @@ function ermittleRangMitFortschritt() {
         aktuellerRang: alleRaenge[aktuellerIndex],
         naechsterRang: alleRaenge[aktuellerIndex + 1],
         gesamtCoins: gesamtCoins
+        
     };
 }
 
@@ -32,6 +33,7 @@ if (rangDaten.naechsterRang) {
     let spanne = rangDaten.naechsterRang.minCoins - rangDaten.aktuellerRang.minCoins;
     let fortschritt = rangDaten.gesamtCoins - rangDaten.aktuellerRang.minCoins;
     let prozent = Math.min(100, (fortschritt / spanne) * 100);
+
 
     document.getElementById("rangBalkenFill").style.width = prozent + "%";
     document.getElementById("rangInfo").innerHTML =
@@ -87,3 +89,13 @@ for (let i = 0; i < alleHighscores.length; i++) {
 
     highscoreListe.appendChild(zeile);
 }
+
+let streak = Number(localStorage.getItem("challenge_streak")) || 0;
+let heute = heutigerSeed();
+let letzterTag = Number(localStorage.getItem("challenge_letzter_tag")) || 0;
+let streakAktiv = (letzterTag === heute) || (letzterTag === gestrigerSeed());
+
+document.getElementById("challengeKarteProfil").innerHTML += streakAktiv && streak > 0
+    ? "<p class='streak-info'>🔥 " + streak + " Tage Streak</p>"
+    : "";
+
