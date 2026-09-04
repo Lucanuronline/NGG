@@ -60,6 +60,19 @@ const spiele = {
     beschreibung: "Spiele gegen den Dealer und versuche, mit deinen Karten möglichst nah an 21 Punkte zu kommen. Aber Vorsicht: Wer über 21 kommt, verliert die Runde!",
     bild: "img/blackjack_icon.png",
     link: "blackjack/blackjack.html"
+},
+
+memory: {
+    titel: "Memory",
+    beschreibung: "Deck Karten auf und finde alle Paare mit möglichst wenigen Versuchen. Trainiere dein Gedächtnis und knacke deinen Bestwert!",
+    bild: "img/memory_icon.png",
+    link: "memory/index.html"
+},
+simon: {
+    titel: "Simon",
+    beschreibung: "Merk dir die immer länger werdende Farbsequenz und tippe sie in der richtigen Reihenfolge nach. Wie viele Runden schaffst du?",
+    bild: "img/simon_icon.png",
+    link: "simon/index.html"
 }
 };
 

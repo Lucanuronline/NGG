@@ -157,3 +157,66 @@ body {
     padding: 40px 20px;
     max-width: 400px;
 }
+
+.vorschau-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 10, 36, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.vorschau-modal {
+    background: linear-gradient(#3a2f7a, #241c52);
+    border: 2px solid #34d6ff;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(52, 214, 255, 0.4);
+}
+
+.vorschau-modal h3 {
+    color: #eafcff;
+    margin: 0 0 12px;
+}
+
+#vorschauCanvas {
+    background: #0d0a24;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto 15px;
+}
+
+.vorschau-schliessen-btn {
+    height: 40px;
+    width: 140px;
+    border: 2px solid #34d6ff;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #41377f, #4d4296);
+    color: #eafcff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.vorschau-btn {
+    width: 100%;
+    height: 36px;
+    border: 2px solid rgba(52, 214, 255, 0.4);
+    border-radius: 10px;
+    background: transparent;
+    color: #34d6ff;
+    font-size: 13px;
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+
+.vorschau-btn:hover {
+    box-shadow: 0 0 10px rgba(52, 214, 255, 0.4);
+}

@@ -1,0 +1,86 @@
+body{
+    background: linear-gradient(#5d4eb8, #261e54);
+    color: #eafcff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+h1{
+    display: block;
+    width: 250px;
+    max-width: 100%;
+    background: linear-gradient(45deg, #41377f, #4d4296);
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 28px;
+    margin: 0 0 15px 0;
+    padding: 10px;
+    text-shadow: 0 0 15px #34d6ff;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.infos {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+h2{
+    background: linear-gradient(45deg, #41377f, #4d4296);
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 10px 14px;
+    text-shadow: 0 0 10px #34d6ff;
+    margin: 0;
+}
+
+button{
+    height: 42px;
+    padding: 0 18px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #eafcff;
+    background: linear-gradient(45deg, #1c7a1c, #38CC1D);
+    border: 2px solid #5ee6a4;
+    border-radius: 12px;
+    text-shadow: 0 0 8px #5ee6a4;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover{ box-shadow: 0 0 15px #5ee6a4; transform: scale(1.05); }
+
+.simon-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 1;
+}
+
+.simon-feld {
+    border-radius: 16px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 0.1s;
+}
+
+.simon-feld.aktiv {
+    opacity: 1;
+    box-shadow: 0 0 30px currentColor;
+}
+
+.gruen { background: #38CC1D; color: #5ee6a4; }
+.rot { background: #a93a3a; color: #ff5c5c; }
+.gelb { background: #c4a733; color: #ffe066; }
+.blau { background: #1c6f9c; color: #5ce1ff; }

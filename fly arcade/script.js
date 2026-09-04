@@ -64,8 +64,6 @@ function gameLoop(zeitstempel) {
 
     if (checkKollision()) {
         document.getElementById("gameOverText").innerHTML = "❌ Game Over!";
-
-        // Game Over - Loop hier stoppen, Text anzeigen etc.
         return;
     }
 
@@ -169,6 +167,7 @@ function checkScore() {
             r.gepunktet = true;
             score++;
             checkChallenge("flappy", score);
+            checkWochenChallenge("flappy", 1);
             document.getElementById("score").innerHTML = "Punkte: " + score;
             if(score >= 10){
                 schalteErfolgFrei("flappy_score_10");

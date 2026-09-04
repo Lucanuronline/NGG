@@ -91,12 +91,13 @@ function renderShop() {
             saisonBadge = "<div class='saison-badge besessen'>✅ Saisonaler Skin</div>";
         }
 
-        karte.innerHTML =
-            saisonBadge +
-            "<div class='skin-vorschau' style='background: linear-gradient(45deg, " + (skin.kopfFarbe || skin.ballFarbe || skin.zielFarbe) + ", " + (skin.koerperFarbe || skin.schlaegerFarbe || skin.kopfFarbe || skin.ballFarbe || skin.zielFarbe) + ")'></div>" +
-            "<h3>" + skin.titel + "</h3>" +
-            "<p>Für: " + skin.spiel + "</p>" +
-            buttonHtml;
+karte.innerHTML =
+    saisonBadge +
+    "<div class='skin-vorschau' style='background: linear-gradient(45deg, " + (skin.kopfFarbe || skin.ballFarbe || skin.zielFarbe) + ", " + (skin.koerperFarbe || skin.schlaegerFarbe || skin.kopfFarbe || skin.ballFarbe || skin.zielFarbe) + ")'></div>" +
+    "<h3>" + skin.titel + "</h3>" +
+    "<p>Für: " + skin.spiel + "</p>" +
+    "<button class='vorschau-btn' data-vorschau-id='" + id + "'>👁️ Live-Vorschau</button>" +
+    buttonHtml;
 
         liste.appendChild(karte);
     }
@@ -117,7 +118,16 @@ function renderShop() {
             renderShop();
         });
     });
+
+    liste.querySelectorAll("[data-vorschau-id]").forEach(function(btn) {
+    btn.addEventListener("click", function() {
+        let id = btn.dataset.vorschauId;
+        oeffneSkinVorschau(alleAnzeigbarenSkins[id]);
+    });
+});
 }
+
+
 
 erzeugeTabs();
 renderShop();

@@ -65,6 +65,7 @@ function treffer() {
     document.getElementById('score').innerHTML = ('Treffer: ' + score);
 
     checkChallenge("aim", score);
+    checkWochenChallenge("aim", 1);
 
     if(score > highscore) {
         highscore = score;

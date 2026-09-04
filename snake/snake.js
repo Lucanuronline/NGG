@@ -166,6 +166,7 @@ if (head.x === food.x && head.y === food.y) {
 }
 
     checkChallenge("snake", score);
+    checkWochenChallenge("snake", 1);
 
     if (score >= 20) {
     schalteErfolgFrei("snake_score_20");

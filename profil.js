@@ -29,6 +29,31 @@ function ermittleRangMitFortschritt() {
 let rangDaten = ermittleRangMitFortschritt();
 document.getElementById("rangTitel").innerHTML = "🎖️ " + rangDaten.aktuellerRang.name;
 
+let letzterGesehenerRang = localStorage.getItem("letzter_gesehener_rang");
+
+if (letzterGesehenerRang !== null && letzterGesehenerRang !== rangDaten.aktuellerRang.name) {
+    zeigeRangAufstieg(rangDaten.aktuellerRang.name);
+}
+
+localStorage.setItem("letzter_gesehener_rang", rangDaten.aktuellerRang.name);
+
+function zeigeRangAufstieg(neuerRang) {
+    const jsConfetti = new JSConfetti();
+    jsConfetti.addConfetti();
+
+    let benachrichtigung = document.createElement("div");
+    benachrichtigung.className = "erfolg-benachrichtigung";
+    benachrichtigung.innerHTML =
+        "🎉 <strong>Neuer Rang!</strong><br>Du bist jetzt: " + neuerRang;
+    document.body.appendChild(benachrichtigung);
+
+    setTimeout(function() {
+        benachrichtigung.classList.add("ausblenden");
+        setTimeout(function() { benachrichtigung.remove(); }, 500);
+    }, 4000);
+}
+
+
 if (rangDaten.naechsterRang) {
     let spanne = rangDaten.naechsterRang.minCoins - rangDaten.aktuellerRang.minCoins;
     let fortschritt = rangDaten.gesamtCoins - rangDaten.aktuellerRang.minCoins;
@@ -61,6 +86,22 @@ document.getElementById("challengeKarteProfil").innerHTML =
     "<p>" + challenge.text + "</p>" +
     (erledigt ? "<span class='challenge-status erledigt'>✅ Geschafft!</span>" : "<span class='challenge-status'>+25 🪙 bei Erfolg</span>");
 
+let wochenChallenge = heutigeWochenChallenge();
+let wochenErledigt = istWochenChallengeAbgeschlossen();
+let wochenFortschrittAktuell = wochenFortschritt(wochenChallenge.spiel);
+
+let wochenKarte = document.createElement("div");
+wochenKarte.className = "profil-karte";
+wochenKarte.innerHTML =
+    "<h2 class='karten-titel'>🏅 Wochen-Challenge</h2>" +
+    "<p>" + wochenChallenge.text + "</p>" +
+    (wochenErledigt
+        ? "<span class='challenge-status erledigt'>✅ Geschafft!</span>"
+        : "<span class='challenge-status'>" + wochenFortschrittAktuell + " / " + wochenChallenge.zielwert + " · +75 🪙 bei Erfolg</span>");
+
+document.getElementById("challengeKarteProfil").insertAdjacentElement("afterend", wochenKarte);
+
+    
     const alleHighscores = [
     { spiel: "Number Guessing Game (Leicht)", schluessel: "highscoreEasy", einheit: " Versuche" },
     { spiel: "Number Guessing Game (Mittel)", schluessel: "highscoreMedium", einheit: " Versuche" },

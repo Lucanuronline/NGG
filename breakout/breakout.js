@@ -165,6 +165,7 @@ function moveBall() {
 
         score++;
         checkChallenge("breakout", score);
+        checkWochenChallenge("breakout", 1);
         document.getElementById('score').innerHTML = ('Treffer: ' + score);
         let blockSFX = new Audio('sounds/blockbreak.mp3')
         blockSFX.play();

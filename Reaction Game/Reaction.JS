@@ -48,6 +48,7 @@ document.getElementById('feld').onclick = function () {
     let reaktion = Date.now() - startZeit;
 
     checkChallenge("react", reaktion);
+     checkWochenChallenge("react", 1);
 
     versucheGesamt++;
 localStorage.setItem('reactionVersuche', versucheGesamt);

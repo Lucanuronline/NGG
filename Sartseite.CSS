@@ -84,6 +84,88 @@ body{
     50% { transform: scale(1.06); text-shadow: 0 0 30px #34d6ff, 0 0 60px #34d6ff; }
 }
 
+.changelog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 10, 36, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.changelog-modal {
+    background: linear-gradient(#3a2f7a, #241c52);
+    border: 2px solid #34d6ff;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 450px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 0 40px rgba(52, 214, 255, 0.4);
+}
+
+.changelog-titel {
+    text-align: center;
+    font-size: 26px;
+    color: #eafcff;
+    text-shadow: 0 0 15px #34d6ff;
+    margin: 0 0 20px;
+}
+
+.changelog-version h3 {
+    color: #ffe066;
+    font-size: 17px;
+    margin: 0 0 8px;
+}
+
+.changelog-version ul {
+    margin: 0 0 20px;
+    padding-left: 20px;
+    color: #eafcff;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.changelog-schliessen-btn {
+    display: block;
+    width: 100%;
+    height: 48px;
+    border: 2px solid #5ee6a4;
+    border-radius: 12px;
+    background: linear-gradient(45deg, #1c7a1c, #38CC1D);
+    color: #eafcff;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.changelog-btn {
+    display: inline-block;
+    background: linear-gradient(45deg, #41377f, #4d4296);
+    border: 2px solid #34d6ff;
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #eafcff;
+    text-shadow: 0 0 8px #34d6ff;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 0 6px;
+}
+
+.changelog-btn:hover {
+    box-shadow: 0 0 15px #34d6ff;
+    transform: scale(1.05);
+}
+
 .challenge-karte {
     background: rgba(36, 28, 82, 0.5);
     border: 1px solid rgba(255, 224, 102, 0.4);
@@ -123,6 +205,16 @@ body{
 .challenge-status.erledigt {
     background: rgba(94, 230, 164, 0.2);
     color: #5ee6a4;
+}
+
+.wochen-karte {
+    border-color: rgba(255, 140, 66, 0.4);
+    box-shadow: 0 0 20px rgba(255, 140, 66, 0.15);
+}
+
+.wochen-karte h3 {
+    color: #ffb347;
+    text-shadow: 0 0 10px #ffb347;
 }
 
 .profil-btn {
@@ -296,6 +388,9 @@ body{
 .games a:nth-child(7) { animation-delay: 1.8s; }
 .games a:nth-child(8) { animation-delay: 1.9s; }
 .games a:nth-child(9) { animation-delay: 2.0s; }
+.games a:nth-child(10) { animation-delay: 2.1s; }
+.games a:nth-child(11) { animation-delay: 2.2s; }
+.games a:nth-child(12) { animation-delay: 2.3s; }
 
 @keyframes karte-erscheinen {
     from {
@@ -415,6 +510,16 @@ body{
 .blackjack { background: linear-gradient(135deg, #ff28d8, #5cb8ff); }
 .blackjack .karten-bild { background-image: url(img/blackjack_icon.png); }
 .blackjack:hover { box-shadow: 0 0 25px #ff28d8; }
+
+.memory { background: linear-gradient(135deg, #ffe066, #41377f); }
+.memory .karten-bild { background-image: url(img/memory_icon.png); }
+.memory:hover { box-shadow: 0 0 25px #ffe066; }
+
+.simon { background: linear-gradient(135deg, #38CC1D, #1c6f9c); }
+.simon .karten-bild { background-image: url(img/simon_icon.png); }
+.simon:hover { box-shadow: 0 0 25px #38CC1D; }
+
+
 
 .games > div {
     background-size: cover;

@@ -39,7 +39,10 @@ const kategorieNamen = {
     mines: "Minesweeper",
     hoehertiefer: "Höher Tiefer",
     blackjack: "Blackjack",
+    memory: "Memory",
+    simon: "Simon",
     geheim: "Geheim"
+
 };
 
 let aktuelleKategorie = "alle";

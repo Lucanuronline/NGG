@@ -15,6 +15,18 @@ document.getElementById("challengeKarte").innerHTML =
     "<p>" + challenge.text + "</p>" +
     (erledigt ? "<span class='challenge-status erledigt'>✅ Geschafft!</span>" : "<span class='challenge-status'>+25 🪙 bei Erfolg</span>");
 
+let wochenChallenge = heutigeWochenChallenge();
+let wochenErledigt = istWochenChallengeAbgeschlossen();
+let wochenFortschrittAktuell = wochenFortschritt(wochenChallenge.spiel);
+
+document.getElementById("wochenChallengeKarte").innerHTML =
+    "<h3>🏅 Wochen-Challenge</h3>" +
+    "<p>" + wochenChallenge.text + "</p>" +
+    (wochenErledigt
+        ? "<span class='challenge-status erledigt'>✅ Geschafft!</span>"
+        : "<span class='challenge-status'>" + wochenFortschrittAktuell + " / " + wochenChallenge.zielwert + " · +75 🪙 bei Erfolg</span>");
+
+
 const kristallBtn = document.getElementById("kristallBtn");
 let kristallSichtbar = false;
 let kristallVerschwindenTimeout;
@@ -179,6 +191,6 @@ function sortiereFavoriten() {
 
 
 
-
+zeigeChangelogModal();
 
 

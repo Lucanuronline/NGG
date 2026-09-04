@@ -1,0 +1,91 @@
+body{
+    background: linear-gradient(#5d4eb8, #261e54);
+    color: #eafcff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+h1{
+    display: block;
+    width: 250px;
+    max-width: 100%;
+    background: linear-gradient(45deg, #41377f, #4d4296);
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 28px;
+    margin: 0 0 15px 0;
+    padding: 10px;
+    text-shadow: 0 0 15px #34d6ff;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.infos {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+h2{
+    background: linear-gradient(45deg, #41377f, #4d4296);
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 10px 14px;
+    text-shadow: 0 0 10px #34d6ff;
+    margin: 0;
+}
+
+button{
+    height: 42px;
+    padding: 0 18px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #eafcff;
+    background: linear-gradient(45deg, #41377f, #4d4296);
+    border: 2px solid #34d6ff;
+    border-radius: 12px;
+    text-shadow: 0 0 8px #34d6ff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover{ box-shadow: 0 0 15px #34d6ff; transform: scale(1.05); }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.karte {
+    aspect-ratio: 1;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #41377f, #4d4296);
+    border: 2px solid #34d6ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(52, 214, 255, 0.4);
+}
+
+.karte.aufgedeckt {
+    background: #241c52;
+}
+
+.karte.gefunden {
+    background: linear-gradient(45deg, #1c7a1c, #38CC1D);
+    border-color: #5ee6a4;
+    cursor: default;
+}

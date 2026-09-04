@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>🎨 Simon</h1>
+    <div class="infos">
+        <h2 id="runde">Runde: 0</h2>
+        <h2 id="highscore">Bestwert: -</h2>
+        <button id="btnStart">Start</button>
+    </div>
+    <div class="simon-grid">
+        <div class="simon-feld gruen" data-farbe="gruen"></div>
+        <div class="simon-feld rot" data-farbe="rot"></div>
+        <div class="simon-feld gelb" data-farbe="gelb"></div>
+        <div class="simon-feld blau" data-farbe="blau"></div>
+    </div>
+    <h1 id="statusText"></h1>
+
+    <script src="../erfolge.js"></script>
+    <script src="../challenges.js"></script>
+    <script src="../shop.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
