@@ -32,7 +32,14 @@ const alleErfolge = {
     blackjack_5_siege: { titel: "Kartenprofi", beschreibung: "5 Runden Blackjack gewonnen", coins: 20, kategorie: "blackjack" },
     blackjack_natuerlich: { titel: "Blackjack!", beschreibung: "Mit den ersten zwei Karten direkt 21 erreicht", coins: 30, kategorie: "blackjack" },
 
+    memory_gewonnen: { titel: "Gedächtniskünstler", beschreibung: "Eine Runde Memory gewonnen", coins: 15, kategorie: "memory" },
+    memory_wenig_versuche: { titel: "Fotografisches Gedächtnis", beschreibung: "Memory in 12 Versuchen oder weniger gewonnen", coins: 30, kategorie: "memory" },
+
+    simon_runde_10: { titel: "Mustermeister", beschreibung: "Runde 10 in Simon erreicht", coins: 20, kategorie: "simon" },
+    simon_runde_20: { titel: "Gedächtnisgenie", beschreibung: "Runde 20 in Simon erreicht", coins: 40, kategorie: "simon" },
+
     kristall_100_klicks: { titel: "Kristallschürfer", beschreibung: "Den Neon-Kristall 100-mal angeklickt", coins: 25, kategorie: "kristall" },
+
 
         geheim_nacht_eule: {
         titel: "Nachteule",
