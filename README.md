@@ -25,10 +25,31 @@ Flieg mit deinem kleinen Vogel durch den Neon-Nachthimmel und weiche geschickt d
 ### ❌⭕ Tic Tac Toe
 Das Klassiker-Duell in zwei Varianten: Fordere einen Freund am selben Gerät heraus, oder tritt gegen die NeonArcade-KI an. Setze abwechselnd X und O und versuche als Erstes drei in einer Reihe zu bekommen.
 
+### 💣 Minesweeper
+Deck vorsichtig Feld für Feld auf, ohne auf eine Mine zu treffen. Wähle zwischen drei Schwierigkeitsgraden und versuche, deine Bestzeit zu unterbieten.
+
+### 🃏 Höher Tiefer
+Ziehe eine Karte und wette, ob die nächste höher oder tiefer ist. Setze deine Coins ein und versuche, eine möglichst lange Gewinnserie hinzulegen.
+
+### 🂡 Blackjack
+Das klassische Kartenspiel auf 21: Ziehe Karten, halte oder überkauf dich nicht, und schlag den Dealer. Setze Coins ein und spiel um deinen Gewinn.
+
+### 🧠 Memory
+Deck Karten auf und finde alle Paare mit möglichst wenigen Versuchen. Trainiere dein Gedächtnis und knacke deinen Bestwert.
+
+### 🎨 Simon
+Merk dir die immer länger werdende Farbsequenz und tippe sie in der richtigen Reihenfolge nach. Wie viele Runden schaffst du?
+
 ## ✨ Features
 
 - 🏆 Highscores mit Local Storage
-- 📊 Statistiken
+- 📊 Statistiken & zentrales Spielerprofil mit Rang-System
+- 🪙 Coins-Währung, verdienbar über Erfolge, Challenges und ein Idle-Klick-Element
+- 🎯 Über 30 Erfolge, darunter geheime Erfolge zum Entdecken
+- 🌟 Tägliche und wöchentliche Challenges mit Streak-Bonus
+- 🛒 Shop mit kaufbaren Skins, inkl. zeitlich begrenzter saisonaler Skins und Live-Vorschau
+- ⭐ Favoriten-System für die Spieleübersicht
+- 📋 Changelog-Seite mit Übersicht aller Neuerungen
 - 📱 Mobile Unterstützung (Touch-Steuerung, responsives Design)
 - 🎵 Soundeffekte
 - 🎨 Modernes Neon-Arcade-Design
