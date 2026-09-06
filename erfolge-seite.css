@@ -122,3 +122,22 @@ body {
     color: #eafcff;
     box-shadow: 0 0 10px rgba(52, 214, 255, 0.4);
 }
+
+.erfolg-karte.seltenheit-bronze.freigeschaltet { border-color: #cd7f32; }
+.erfolg-karte.seltenheit-silber.freigeschaltet { border-color: #c0c0c0; box-shadow: 0 0 12px rgba(192, 192, 192, 0.3); }
+.erfolg-karte.seltenheit-gold.freigeschaltet { border-color: #ffd700; box-shadow: 0 0 15px rgba(255, 215, 0, 0.4); }
+.erfolg-karte.seltenheit-platin.freigeschaltet { border-color: #e5e4ff; box-shadow: 0 0 20px rgba(229, 228, 255, 0.5); }
+
+.seltenheit-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 8px;
+    margin-top: 6px;
+}
+
+.seltenheit-label.seltenheit-bronze { background: rgba(205, 127, 50, 0.2); color: #cd7f32; }
+.seltenheit-label.seltenheit-silber { background: rgba(192, 192, 192, 0.2); color: #c0c0c0; }
+.seltenheit-label.seltenheit-gold { background: rgba(255, 215, 0, 0.2); color: #ffd700; }
+.seltenheit-label.seltenheit-platin { background: rgba(229, 228, 255, 0.2); color: #e5e4ff; }

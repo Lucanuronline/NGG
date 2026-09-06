@@ -1,9 +1,17 @@
 const changelog = [
     {
+        version: "1.1",
+        datum: "06.09.2026",
+        neuerungen: [
+            "📅 Tages-Login-Bonus: 30-Tage-Kalender mit steigenden Coin-Belohnungen, resettet sich alle 30 Tage",
+            "💎 Erfolge haben jetzt eine Seltenheit (Bronze, Silber, Gold, Platin) mit passendem Glow-Effekt"
+        ]
+    },
+    {
         version: "1.0",
         datum: "05.09.2026",
         neuerungen: [
-            "Die Erste Vollversion von Neonarcade ist Draußen!!!",
+            "Die Erste Vollversion von NeonArcade ist Draußen!!!",
             "🔥 Streak-System: Tage in Folge Challenges schaffen für Coin-Bonus",
             "🎉 Konfetti-Effekt beim Erreichen eines neuen Rangs im Profil",
             "🏅 Wöchentliche Challenge zusätzlich zur täglichen",
